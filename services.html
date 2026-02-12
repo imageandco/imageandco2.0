@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services | Image and Company</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Services Specific Styles */
+        .services-hero {
+            background-color: var(--lilac);
+            color: var(--off-white);
+            text-align: center;
+            padding: 80px 10%;
+        }
+
+        .process-section {
+            background-color: var(--off-white);
+            color: var(--legacy-ink);
+            padding: 60px 10%;
+        }
+
+        .menu-section {
+            background-color: var(--off-white);
+            padding: 60px 10%;
+        }
+
+        .category-wrapper {
+            border-bottom: 2px solid var(--lilac);
+            margin-bottom: 20px;
+        }
+
+        summary {
+            list-style: none;
+            font-family: 'Perandory', sans-serif;
+            font-size: 1.8rem;
+            cursor: pointer;
+            padding: 20px 0;
+            text-align: right;
+            color: var(--legacy-ink);
+        }
+
+        .service-item {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            text-align: right;
+            padding: 20px;
+            margin: 10px 0;
+            background: linear-gradient(to right, var(--lilac), var(--legacy-ink));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            border: 1px solid var(--lilac);
+            border-radius: 5px;
+        }
+
+        .service-item h4, .service-item p, .service-item ul {
+            margin: 5px 0;
+            color: var(--legacy-ink); /* Fallback for gradient text */
+        }
+
+        .btn-work {
+            border: 2px solid var(--pear);
+            background: transparent;
+            color: var(--pear);
+            padding: 8px 20px;
+            cursor: pointer;
+            font-weight: bold;
+            margin-top: 10px;
+            text-transform: uppercase;
+        }
+
+        /* Form Popup Styles */
+        #booking-modal {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.8);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background: var(--off-white);
+            padding: 40px;
+            width: 90%;
+            max-width: 500px;
+            border-radius: 10px;
+        }
+
+        .modal-content input, .modal-content textarea {
+            width: 100%;
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid var(--legacy-ink);
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo" style="color: white; font-weight: bold;">IMAGE & CO</div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="services.html">Services</a>
+            <a href="media.html">Media</a>
+            <a href="kai.html">Meet Kai</a>
+        </div>
+    </nav>
+
+    <section class="services-hero">
+        <h1 style="font-family: 'Burgues Script'; font-size: 3.5rem;">Not your average</h1>
+        <p style="max-width: 800px; margin: 0 auto; line-height: 1.6;">Image and Company isn't just a creative firm—we're a team of strategists, software developers, web designers, & some of the best marketing experts around. Why partner with four firms who don't even fully understand their role in your vision when you can partner with one who makes your business a personal matter. All of this started seven years ago in a dorm room so nobody understands growth more than us. If we work we win—all we're waiting on is you.</p>
+    </section>
+
+    <section class="process-section">
+        <p style="font-weight: bold; font-size: 1.2rem; margin-bottom: 20px;">Let's start off with the process.</p>
+        <ul style="list-style: none; padding: 0; line-height: 2;">
+            <li><strong>+ Select your Service</strong> | Choose the service or system that best aligns with your bottleneck</li>
+            <li><strong>+ Roundtable</strong> | We schedule a strategy-heavy session to discuss every need and want</li>
+            <li><strong>+ Build</strong> | We design your assets and build your systems with a focus on conversion</li>
+            <li><strong>+ Delivery</strong> | We hand over deliverables with clear walkthroughs</li>
+        </ul>
+    </section>
+
+    <section class="menu-section">
+        <h2 style="font-family: 'Perandory'; text-align: center; font-size: 2.5rem; margin-bottom: 40px;">The Detailed Menu</h2>
+
+        <div class="category-wrapper">
+            <details>
+                <summary>Story Led Creative</summary>
+                <div class="service-item">
+                    <h4>Brand Story & Positioning Intensive | $450</h4>
+                    <p>60-90 minute strategy session, Core brand story, Positioning board, Tone-of-voice guide.</p>
+                    <button class="btn-work" onclick="openBooking('Brand Story Intensive')">Let's Work</button>
+                </div>
+                <div class="service-item">
+                    <h4>Visual Identity & Mini Brand Suite | $850 - $1,200</h4>
+                    <p>Primary Logo, Color story + typography guide, 6-10 social templates.</p>
+                    <button class="btn-work" onclick="openBooking('Visual Identity')">Let's Work</button>
+                </div>
+            </details>
+        </div>
+
+        <div class="category-wrapper">
+            <details>
+                <summary>Detail Refined Systems</summary>
+                <div class="service-item">
+                    <h4>Webinar & Lead Capture Systems | $650 - $1,000</h4>
+                    <p>Landing page + slide deck or Lead magnet creation + delivery automation.</p>
+                    <button class="btn-work" onclick="openBooking('Lead Capture Systems')">Let's Work</button>
+                </div>
+                <div class="service-item">
+                    <h4>Software and Internal System Design | Starting at $750</h4>
+                    <p>Onboarding systems, Course platforms, or Team management systems.</p>
+                    <button class="btn-work" onclick="openBooking('Software Design')">Let's Work</button>
+                </div>
+            </details>
+        </div>
+
+        <div class="category-wrapper">
+            <details>
+                <summary>Signature Website Design</summary>
+                <div class="service-item">
+                    <h4>Full Website Design | Starting at $1,600</h4>
+                    <p>Narrative + UX structure, Design + copy editing, Mobile optimization, Launch assets.</p>
+                    <button class="btn-work" onclick="openBooking('Full Website Design')">Let's Work</button>
+                </div>
+            </details>
+        </div>
+    </section>
+
+    <div id="booking-modal">
+        <div class="modal-content">
+            <h3 id="selected-service-title" style="color: var(--legacy-ink);"></h3>
+            <form action="mailto:contact@imageandcompany.com" method="post" enctype="text/plain">
+                <input type="hidden" name="Service" id="form-service-name">
+                <input type="text" name="First_Last_Name" placeholder="First and Last Name" required>
+                <input type="text" name="Phone" placeholder="Phone Number" required>
+                <input type="text" name="Business_Name" placeholder="Business Name" required>
+                <input type="text" name="Industry" placeholder="Industry" required>
+                <textarea name="Details" placeholder="More Details Section" rows="4"></textarea>
+                <input type="text" name="Socials" placeholder="Instagram / Facebook / Website (Optional)">
+                <button type="submit" class="btn-black" style="width: 100%;">Submit Request</button>
+                <button type="button" onclick="closeBooking()" style="background: none; border: none; margin-top: 10px; cursor: pointer;">Cancel</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        Made in Memphis, serving clients globally.<br>
+        Copyright 2026 Image and Company.
+    </footer>
+
+    <script>
+        function openBooking(serviceName) {
+            document.getElementById('booking-modal').style.display = 'flex';
+            document.getElementById('selected-service-title').innerText = 'Work with us: ' + serviceName;
+            document.getElementById('form-service-name').value = serviceName;
+        }
+        function closeBooking() {
+            document.getElementById('booking-modal').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
