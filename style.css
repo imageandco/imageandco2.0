@@ -9,9 +9,23 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Segoe UI', sans-serif; /* Fallback for Lovely May */
+    font-family: 'Lovely May', 'Segoe UI', sans-serif; /* Prioritizing Lovely May */
     background-color: var(--off-white);
     color: var(--legacy-ink);
+    letter-spacing: 0.5px; /* Added for body readability */
+}
+
+/* TYPOGRAPHY HIERARCHY ADDITIONS */
+h1, .script-header {
+    font-family: 'Burgues Script', cursive;
+    text-transform: none; /* Ensuring script never goes all-caps */
+    font-weight: 400;
+}
+
+h2, h3, .impact-header, .nav-links a, summary {
+    font-family: 'Perandory', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
 /* NAVIGATION */
@@ -36,6 +50,11 @@ nav {
     text-decoration: none;
     font-weight: bold;
     text-transform: uppercase;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--legacy-ink);
 }
 
 /* Mobile Menu (Hamburger) */
@@ -74,12 +93,16 @@ nav {
 
 .hero h1 { font-family: 'Burgues Script', cursive; font-size: 4rem; margin-bottom: 1rem; }
 
-/* FLEX BOXES */
+/* FLEX BOXES & INTERACTION ADDITIONS */
 .flex-container {
     display: flex;
     justify-content: center;
     gap: 20px;
     padding: 40px 5%;
+}
+
+.info-box, .service-item, .feature-box, .btn-black, .btn-work {
+    transition: all 0.3s ease-in-out; /* Smooth transition for all interactions */
 }
 
 .info-box {
@@ -90,6 +113,13 @@ nav {
     border-radius: 8px;
 }
 
+/* The "Flutter" & Lift Effect */
+.info-box:hover, .feature-box:hover, .service-item:hover {
+    transform: translateY(-8px);
+    filter: brightness(1.1);
+    box-shadow: 0 10px 20px rgba(30, 7, 8, 0.15);
+}
+
 .btn-black {
     background: black;
     color: var(--off-white);
@@ -97,6 +127,24 @@ nav {
     border: none;
     cursor: pointer;
     margin-top: 15px;
+}
+
+.btn-black:hover {
+    background-color: var(--lilac);
+    color: var(--legacy-ink);
+    transform: scale(1.05);
+}
+
+/* SCROLL REVEAL ANIMATION STATES */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 /* FOOTER */
@@ -110,7 +158,7 @@ footer {
 
 /* RESPONSIVE */
 @media (max-width: 768px) {
-    .nav-links { display: none; } /* Add JS to toggle this */
+    .nav-links { display: none; }
     .menu-toggle { display: flex; }
     .flex-container { flex-direction: column; }
     .hero h1 { font-size: 2.5rem; }
