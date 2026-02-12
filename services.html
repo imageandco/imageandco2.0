@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Services | Image and Company</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="favicon.png">
     <style>
         /* Services Specific Styles */
         .services-hero {
@@ -202,6 +203,20 @@
         function closeBooking() {
             document.getElementById('booking-modal').style.display = 'none';
         }
+
+        // ADDITION: SCROLL REVEAL SCRIPT
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        });
+
+        document.querySelectorAll('section').forEach((el) => {
+            el.classList.add('reveal');
+            observer.observe(el);
+        });
     </script>
 </body>
 </html>
