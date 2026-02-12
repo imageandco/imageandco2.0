@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Media & Collaborations | Image and Company</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="favicon.png">
     <style>
         .foundher-section {
             background-color: var(--off-white);
@@ -140,6 +141,21 @@
         Made in Memphis, serving clients globally.<br>
         Copyright 2026 Image and Company.
     </footer>
+
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        });
+
+        document.querySelectorAll('section').forEach((el) => {
+            el.classList.add('reveal');
+            observer.observe(el);
+        });
+    </script>
 
 </body>
 </html>
