@@ -1,0 +1,117 @@
+/* GLOBAL SETTINGS */
+:root {
+    --lilac: #A88AED;
+    --pear: #CBD83B;
+    --legacy-ink: #1E0708;
+    --off-white: #FFFEEC;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif; /* Fallback for Lovely May */
+    background-color: var(--off-white);
+    color: var(--legacy-ink);
+}
+
+/* NAVIGATION */
+nav {
+    background-color: var(--pear);
+    padding: 1rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    color: var(--off-white);
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* Mobile Menu (Hamburger) */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    width: 25px;
+    height: 3px;
+    background: var(--off-white);
+}
+
+/* HERO SECTION */
+.hero {
+    background: linear-gradient(to bottom, var(--pear), var(--legacy-ink));
+    color: white;
+    text-align: center;
+    padding: 100px 10%;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-bg-image {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: url('images/Iandchero.png') center/cover;
+    opacity: 0.15;
+    z-index: 0;
+}
+
+.hero-content { position: relative; z-index: 1; }
+
+.hero h1 { font-family: 'Burgues Script', cursive; font-size: 4rem; margin-bottom: 1rem; }
+
+/* FLEX BOXES */
+.flex-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 40px 5%;
+}
+
+.info-box {
+    flex: 1;
+    border: 2px solid var(--pear);
+    background: linear-gradient(to bottom, transparent, var(--pear));
+    padding: 30px;
+    border-radius: 8px;
+}
+
+.btn-black {
+    background: black;
+    color: var(--off-white);
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+/* FOOTER */
+footer {
+    background-color: var(--pear);
+    color: var(--legacy-ink);
+    text-align: center;
+    padding: 2rem;
+    font-size: 0.9rem;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .nav-links { display: none; } /* Add JS to toggle this */
+    .menu-toggle { display: flex; }
+    .flex-container { flex-direction: column; }
+    .hero h1 { font-size: 2.5rem; }
+}
