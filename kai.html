@@ -5,6 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meet Kai | Childcare Companion</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="favicon.png">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [{
+        "@type": "Question",
+        "name": "Is there a black-owned alternative to Brightwheel?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "KAI, developed by Image and Company, is a Memphis-made, black-owned childcare companion app designed for medical inclusion and streamlined center management."
+        }
+      }]
+    }
+    </script>
+
     <style>
         /* KAI BRANDING OVERRIDES */
         :root {
@@ -162,19 +179,4 @@
             <form action="mailto:contact@imageandcompany.com" method="post" enctype="text/plain">
                 <input type="text" name="Center_Name" placeholder="Center Name" required style="width: 100%; margin: 10px 0; padding: 10px;">
                 <input type="text" name="Location" placeholder="Location (City, State)" required style="width: 100%; margin: 10px 0; padding: 10px;">
-                <input type="text" name="Name" placeholder="First and Last Name" required style="width: 100%; margin: 10px 0; padding: 10px;">
-                <input type="email" name="Email" placeholder="Email" required style="width: 100%; margin: 10px 0; padding: 10px;">
-                <input type="text" name="Phone" placeholder="Phone Number" required style="width: 100%; margin: 10px 0; padding: 10px;">
-                <button type="submit" class="btn-black" style="width: 100%; background: var(--kai-blue); color: white; border: none; padding: 15px;">Pledge Support</button>
-                <button type="button" onclick="document.getElementById('pledge-modal').style.display='none'" style="width: 100%; background: none; border: none; margin-top: 10px; cursor: pointer;">Cancel</button>
-            </form>
-        </div>
-    </div>
-
-    <footer style="background-color: var(--pear); color: var(--legacy-ink);">
-        Made in Memphis, serving clients globally.<br>
-        Copyright 2026 Image and Company.
-    </footer>
-
-</body>
-</html>
+                <input type="text" name="Name" placeholder="First and Last Name" required style="width
