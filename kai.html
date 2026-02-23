@@ -91,8 +91,71 @@
             background: var(--kai-blue); color: white; padding: 20px 60px;
             border-radius: 50px; text-decoration: none; font-weight: 700;
             display: inline-block; margin-top: 30px; font-size: 1.2rem; transition: 0.3s;
+            cursor: pointer; border: none;
         }
         .pledge-btn:hover { background: var(--kayson-blue); transform: scale(1.05); }
+
+        /* --- Modal Styling --- */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0; top: 0; width: 100%; height: 100%;
+            background-color: rgba(0, 4, 170, 0.4);
+            backdrop-filter: blur(5px);
+        }
+
+        .modal-content {
+            background-color: var(--eggshell);
+            margin: 5% auto;
+            padding: 40px;
+            border-radius: 40px;
+            width: 90%;
+            max-width: 500px;
+            border: 4px solid var(--laila-purple);
+            text-align: left;
+        }
+
+        .modal-header {
+            font-family: 'Fredoka', sans-serif;
+            color: var(--kai-blue);
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .form-group { margin-bottom: 15px; }
+        .form-group label {
+            display: block;
+            font-weight: 700;
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+            color: var(--kai-blue);
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            border-radius: 15px;
+            border: 2px solid var(--laila-purple);
+            font-family: 'Inter', sans-serif;
+            outline: none;
+        }
+
+        .form-group input:focus { border-color: var(--kayson-blue); }
+
+        .submit-pledge {
+            width: 100%;
+            background: var(--kai-blue);
+            color: white;
+            padding: 15px;
+            border-radius: 30px;
+            border: none;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            margin-top: 10px;
+        }
 
         footer { padding: 40px; background: white; font-size: 0.8rem; opacity: 0.7; }
 
@@ -156,12 +219,57 @@
 
     <section class="pledge">
         <h2>Take the pledge to make the switch before we launch!</h2>
-        <a href="#" class="pledge-btn">I'm in.</a>
+        <button class="pledge-btn" id="openModal">I'm in.</button>
     </section>
+
+    <div id="pledgeModal" class="modal">
+        <div class="modal-content">
+            <h2 class="modal-header">The KAI Pledge</h2>
+            <form id="pledgeForm">
+                <div class="form-group">
+                    <label>Center Name</label>
+                    <input type="text" name="center_name" required>
+                </div>
+                <div class="form-group">
+                    <label>Location (City, State)</label>
+                    <input type="text" name="location" required>
+                </div>
+                <div class="form-group">
+                    <label>First and Last Name</label>
+                    <input type="text" name="full_name" required>
+                </div>
+                <div class="form-group">
+                    <label>Email Address</label>
+                    <input type="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label>Phone Number</label>
+                    <input type="tel" name="phone" required>
+                </div>
+                <button type="submit" class="submit-pledge">Sign the Pledge</button>
+            </form>
+        </div>
+    </div>
 
     <footer>
         <p>KAI, copyright 2026, is an Image and Company Product.</p>
     </footer>
 
+    <script>
+        const modal = document.getElementById("pledgeModal");
+        const btn = document.getElementById("openModal");
+
+        btn.onclick = function() { modal.display = "block"; }
+
+        window.onclick = function(event) {
+            if (event.target == modal) { modal.display = "none"; }
+        }
+
+        document.getElementById("pledgeForm").onsubmit = function(e) {
+            e.preventDefault();
+            alert("Thank you for taking the pledge! We'll be in touch before Feb 26.");
+            modal.display = "none";
+        }
+    </script>
 </body>
 </html>
