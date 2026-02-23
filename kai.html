@@ -3,19 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MEET KAI | Childcare Reimagined</title>
+    <title>MEET KAI | Medical Inclusion & Childcare</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Fredoka:wght@400;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --kai-blue: #0004AA;      /* Deep Trust */
-            --eggshell: #F6F4EE;      /* Soft Base */
-            --kayson-blue: #29C5C9;   /* Vibrant Energy */
-            --laila-purple: #E2A9F1;  /* Playful Softness */
+            --kai-blue: #0004AA;
+            --eggshell: #F6F4EE;
+            --kayson-blue: #29C5C9;
+            --laila-purple: #E2A9F1;
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { background-color: var(--eggshell); color: var(--kai-blue); font-family: 'Inter', sans-serif; line-height: 1.6; text-align: center; }
-        h1, h2, h3 { font-family: 'Fredoka', sans-serif; font-weight: 600; }
+        body { background-color: var(--eggshell); color: var(--kai-blue); font-family: 'Inter', sans-serif; overflow-x: hidden; }
+        h1, h2, h3 { font-family: 'Fredoka', sans-serif; font-weight: 600; text-align: center; }
 
         /* --- Navigation --- */
         nav {
@@ -26,140 +26,44 @@
         .logo { font-family: 'Fredoka', sans-serif; font-weight: 600; font-size: 1.5rem; color: var(--kai-blue); }
         nav a { text-decoration: none; color: var(--kai-blue); margin-left: 25px; font-weight: 700; font-size: 0.9rem; }
 
-        /* --- Hero / Story --- */
-        .story-section { padding: 100px 10%; background: white; border-radius: 0 0 50px 50px; }
-        .story-section h2 { font-size: 3rem; margin-bottom: 30px; color: var(--kayson-blue); }
-        .story-body { max-width: 850px; margin: 0 auto; font-size: 1.1rem; text-align: center; }
+        /* --- Hero Section --- */
+        .story-section { padding: 120px 10%; background: white; border-radius: 0 0 80px 80px; }
+        .story-section h2 { font-size: 3.5rem; color: var(--kai-blue); margin-bottom: 10px; }
+        .inclusion-badge { color: var(--kayson-blue); font-weight: 700; text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem; margin-bottom: 30px; display: block; }
+        .story-body { max-width: 850px; margin: 0 auto; font-size: 1.15rem; text-align: center; line-height: 1.8; }
 
-        /* --- Key Features Grid --- */
-        .features { padding: 100px 5%; background: var(--eggshell); position: relative; }
-        .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-top: 50px; }
-        
+        /* --- Flagship SASF Section --- */
+        .sasf-spotlight { padding: 100px 10%; background: var(--kai-blue); color: white; border-radius: 80px; margin: 60px 20px; text-align: center; }
+        .sasf-card {
+            background: white; color: var(--kai-blue); padding: 60px; border-radius: 50px;
+            max-width: 700px; margin: 0 auto; box-shadow: 0 0 50px rgba(41, 197, 201, 0.4);
+            border: 4px solid var(--kayson-blue); animation: pulse-glow 3s infinite;
+        }
+        @keyframes pulse-glow {
+            0% { box-shadow: 0 0 20px rgba(41, 197, 201, 0.4); }
+            50% { box-shadow: 0 0 50px rgba(41, 197, 201, 0.7); }
+            100% { box-shadow: 0 0 20px rgba(41, 197, 201, 0.4); }
+        }
+
+        /* --- Feature Grid --- */
+        .features { padding: 100px 5%; }
+        .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; }
         .feature-box {
-            background: white; padding: 40px; border-radius: 30px;
-            box-shadow: 10px 10px 0px var(--laila-purple);
-            transition: transform 0.3s ease; position: relative; overflow: hidden;
+            background: white; padding: 40px; border-radius: 40px;
+            box-shadow: 15px 15px 0px var(--laila-purple);
+            transition: 0.3s;
         }
-        .feature-box:hover { transform: translateY(-10px); }
-        .feature-box h3 { color: var(--kayson-blue); margin-bottom: 15px; font-size: 1.4rem; }
-        
-        /* Specific Glow for SASF Alert System */
-        .sasf-glow {
-            box-shadow: 0px 0px 20px var(--kayson-blue), 10px 10px 0px var(--laila-purple);
-            border: 2px solid var(--kayson-blue);
-        }
+        .feature-box:hover { transform: translateY(-10px); box-shadow: 20px 20px 0px var(--kayson-blue); }
 
-        /* Doodle Decor */
-        .star { position: absolute; top: 10px; right: 10px; font-size: 1.5rem; color: var(--laila-purple); opacity: 0.5; }
+        /* --- Pricing Section --- */
+        .pricing { padding: 100px 10%; background: white; border-radius: 80px; margin: 60px 20px; }
+        .price-hero { font-size: 5rem; color: var(--kai-blue); margin: 20px 0; }
 
-        /* --- Scrolling Ticker --- */
-        .ticker-container {
-            background: var(--kayson-blue);
-            color: white;
-            padding: 15px 0;
-            overflow: hidden;
-            white-space: nowrap;
-            margin: 40px 0;
-        }
-        .ticker-text {
-            display: inline-block;
-            font-family: 'Fredoka', sans-serif;
-            font-weight: 600;
-            font-size: 1.2rem;
-            text-transform: uppercase;
-            animation: scroll 20s linear infinite;
-        }
-        @keyframes scroll {
-            0% { transform: translateX(100%); }
-            100% { transform: translateX(-100%); }
-        }
+        /* --- Ticker --- */
+        .ticker-container { background: var(--kayson-blue); padding: 20px 0; transform: rotate(-1.5deg); width: 110%; margin-left: -5%; }
+        .ticker-text { display: inline-block; font-family: 'Fredoka', sans-serif; font-size: 1.4rem; color: white; animation: scroll 25s linear infinite; }
 
-        /* --- Comparison Table --- */
-        .comparison { padding: 100px 10%; }
-        .comp-table {
-            display: grid; grid-template-columns: 1fr 1fr; gap: 0px;
-            max-width: 700px; margin: 50px auto; border-radius: 40px; overflow: hidden;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.05);
-        }
-        .comp-head { background: var(--kai-blue); color: white; padding: 25px; font-weight: 700; font-size: 1.2rem; }
-        .comp-row { background: white; padding: 20px; border-bottom: 1px solid #eee; display: flex; align-items: center; justify-content: center; height: 80px; }
-        .comp-us { background: #fdf6ff; font-weight: 700; color: var(--kai-blue); border-right: 2px solid var(--laila-purple); }
-
-        /* --- Pledge Section --- */
-        .pledge { padding: 120px 10%; background: var(--laila-purple); color: white; border-radius: 50px 50px 0 0; }
-        .pledge-btn {
-            background: var(--kai-blue); color: white; padding: 20px 60px;
-            border-radius: 50px; text-decoration: none; font-weight: 700;
-            display: inline-block; margin-top: 30px; font-size: 1.2rem; transition: 0.3s;
-            cursor: pointer; border: none;
-        }
-        .pledge-btn:hover { background: var(--kayson-blue); transform: scale(1.05); }
-
-        /* --- Modal Styling --- */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 2000;
-            left: 0; top: 0; width: 100%; height: 100%;
-            background-color: rgba(0, 4, 170, 0.4);
-            backdrop-filter: blur(5px);
-        }
-
-        .modal-content {
-            background-color: var(--eggshell);
-            margin: 5% auto;
-            padding: 40px;
-            border-radius: 40px;
-            width: 90%;
-            max-width: 500px;
-            border: 4px solid var(--laila-purple);
-            text-align: left;
-        }
-
-        .modal-header {
-            font-family: 'Fredoka', sans-serif;
-            color: var(--kai-blue);
-            font-size: 1.8rem;
-            margin-bottom: 20px;
-            text-align: center;
-        }
-
-        .form-group { margin-bottom: 15px; }
-        .form-group label {
-            display: block;
-            font-weight: 700;
-            font-size: 0.9rem;
-            margin-bottom: 5px;
-            color: var(--kai-blue);
-        }
-
-        .form-group input {
-            width: 100%;
-            padding: 12px;
-            border-radius: 15px;
-            border: 2px solid var(--laila-purple);
-            font-family: 'Inter', sans-serif;
-            outline: none;
-        }
-
-        .form-group input:focus { border-color: var(--kayson-blue); }
-
-        .submit-pledge {
-            width: 100%;
-            background: var(--kai-blue);
-            color: white;
-            padding: 15px;
-            border-radius: 30px;
-            border: none;
-            font-weight: 700;
-            font-size: 1rem;
-            cursor: pointer;
-            margin-top: 10px;
-        }
-
-        footer { padding: 40px; background: white; font-size: 0.8rem; opacity: 0.7; }
-
-        @media (max-width: 768px) { .comp-table { font-size: 0.9rem; } }
+        @keyframes scroll { 0% { transform: translateX(100%); } 100% { transform: translateX(-100%); } }
     </style>
 </head>
 <body>
@@ -170,11 +74,12 @@
             <a href="index.html">HOME</a>
             <a href="services.html">SERVICES</a>
             <a href="media.html">MEDIA</a>
-            <a href="kai.html" style="border-bottom: 3px solid var(--kayson-blue);">MEET KAI</a>
+            <a href="kai.html" style="color: var(--kayson-blue);">MEET KAI</a>
         </div>
     </nav>
 
     <section class="story-section">
+        <span class="inclusion-badge">Medical Inclusion by Design</span>
         <h2>At the Heart of it all</h2>
         <div class="story-body">
             <p>The inspiration for KAI came from the same place most of greatest achievements have—from a conversation with my 4 year old son, Kai. Kai has Autism and Type 1 Diabetes, both of which he handles with such a gentle spirit. For families like mine life is so riddled by paperwork it really does feel like a second job sometimes.</p>
@@ -185,91 +90,40 @@
         </div>
     </section>
 
+    <section class="sasf-spotlight">
+        <h2 style="color: white; margin-bottom: 40px;">Special Alerts for Special Friends</h2>
+        <div class="sasf-card">
+            <h3>2-Factor Medical Management</h3>
+            <p style="margin-top: 20px;">Named SASF, this two factor alert system with a pulse and sound, goes off when scheduled and when dismissed triggers the appropriate area (admin or nurse) to confirm medication dosage or session start with documentation built in and real time notifications for parents.</p>
+        </div>
+    </section>
+
     <section class="features">
-        <h2>KEY FEATURES</h2>
+        <h2>Everything else you need.</h2>
         <div class="feature-grid">
-            <div class="feature-box"><span class="star">★</span><h3>Ouch Log</h3><p>Streamlined incident reporting, with real time parent notifications and photo documentation.</p></div>
-            <div class="feature-box"><span class="star">✦</span><h3>Digital Enrollment</h3><p>Piles of paperwork are a thing of the past—with field detectors and e-signature.</p></div>
-            <div class="feature-box"><span class="star">●</span><h3>Intact E-checkin</h3><p>Parents ensure health and pick-up/drop-off authorization with two clicks.</p></div>
-            <div class="feature-box"><span class="star">★</span><h3>Audit Dashboard</h3><p>Prepare for audits and recall records easily in 15 seconds or less.</p></div>
-            <div class="feature-box"><span class="star">✦</span><h3>Messaging + Photos</h3><p>A timeline feel and flow with quick response options for peace of mind.</p></div>
-            <div class="feature-box sasf-glow"><span class="star">●</span><h3>SASF Alert System</h3><p>2-factor medical alerts (Special Alerts for Special Friends) with confirmed documentation.</p></div>
-            <div class="feature-box"><span class="star">★</span><h3>Classroom Mode</h3><p>Pin-locked classroom mode to protect sensitive information.</p></div>
-            <div class="feature-box"><span class="star">✦</span><h3>Bank-Level Security</h3><p>Compliant, secure, and encrypted data storage.</p></div>
+            <div class="feature-box"><h3>Ouch Log</h3><p>Streamlined incident reporting with real-time notifications and photo documentation.</p></div>
+            <div class="feature-box"><h3>Audit Dashboard</h3><p>Prepare for audits and recall records easily in 15 seconds or less.</p></div>
+            <div class="feature-box"><h3>Digital Enrollment</h3><p>Piles of paperwork are a thing of the past with field detectors and e-signatures.</p></div>
+            <div class="feature-box"><h3>Bank-Level Security</h3><p>AES-256 military-grade encryption for all sensitive medical records.</p></div>
         </div>
     </section>
 
     <div class="ticker-container">
         <div class="ticker-text">
-            MEMPHIS-BUILT // MOM-APPROVED // INCLUSIVE TECH // MEMPHIS-BUILT // MOM-APPROVED // INCLUSIVE TECH
+            SASF INCLUSION // MOM-APPROVED // MEDICAL MANAGEMENT // SASF INCLUSION // MOM-APPROVED
         </div>
     </div>
 
-    <section class="comparison">
-        <h2>MAKE THE SWITCH!<br>Why?</h2>
-        <div class="comp-table">
-            <div class="comp-head">US</div><div class="comp-head" style="background: #999;">THEM</div>
-            <div class="comp-row comp-us">$110/ Monthly</div><div class="comp-row">$200-500/ Monthly</div>
-            <div class="comp-row comp-us">Built By a Mom</div><div class="comp-row">Built by VC's</div>
-            <div class="comp-row comp-us">3 Strategic Focuses</div><div class="comp-row">20 Bloated Features</div>
-            <div class="comp-row comp-us">30 Minute Setup</div><div class="comp-row">3-Day Onboarding</div>
-            <div class="comp-row comp-us">12-Hour Support</div><div class="comp-row">3-Day Support Times</div>
-        </div>
+    <section class="pricing">
+        <h2>One Price. Total Inclusion.</h2>
+        <div class="price-hero">$110</div>
+        <p style="font-weight: 700; text-transform: uppercase;">Per Month</p>
+        <p style="margin-top: 20px; opacity: 0.7;">No tiers. No enterprise bloat. Just everything you need to keep every child intact.</p>
     </section>
 
-    <section class="pledge">
-        <h2>Take the pledge to make the switch before we launch!</h2>
-        <button class="pledge-btn" id="openModal">I'm in.</button>
-    </section>
-
-    <div id="pledgeModal" class="modal">
-        <div class="modal-content">
-            <h2 class="modal-header">The KAI Pledge</h2>
-            <form id="pledgeForm">
-                <div class="form-group">
-                    <label>Center Name</label>
-                    <input type="text" name="center_name" required>
-                </div>
-                <div class="form-group">
-                    <label>Location (City, State)</label>
-                    <input type="text" name="location" required>
-                </div>
-                <div class="form-group">
-                    <label>First and Last Name</label>
-                    <input type="text" name="full_name" required>
-                </div>
-                <div class="form-group">
-                    <label>Email Address</label>
-                    <input type="email" name="email" required>
-                </div>
-                <div class="form-group">
-                    <label>Phone Number</label>
-                    <input type="tel" name="phone" required>
-                </div>
-                <button type="submit" class="submit-pledge">Sign the Pledge</button>
-            </form>
-        </div>
-    </div>
-
-    <footer>
+    <footer style="padding: 60px; background: white; text-align: center;">
         <p>KAI, copyright 2026, is an Image and Company Product.</p>
     </footer>
 
-    <script>
-        const modal = document.getElementById("pledgeModal");
-        const btn = document.getElementById("openModal");
-
-        btn.onclick = function() { modal.display = "block"; }
-
-        window.onclick = function(event) {
-            if (event.target == modal) { modal.display = "none"; }
-        }
-
-        document.getElementById("pledgeForm").onsubmit = function(e) {
-            e.preventDefault();
-            alert("Thank you for taking the pledge! We'll be in touch before Feb 26.");
-            modal.display = "none";
-        }
-    </script>
 </body>
 </html>
