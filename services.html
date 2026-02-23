@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Detailed Menu | Image & Co</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --legacy-ink: #1E1B24;
+            --off-white: #FFFEEC;
+            --lilac: #A88AED;
+            --pear: #CBD83B;
+            --border: 1px solid var(--legacy-ink);
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { background-color: var(--off-white); color: var(--legacy-ink); font-family: 'Inter', sans-serif; line-height: 1.6; }
+        h1, h2, h3, h4 { font-family: 'Playfair Display', serif; }
+
+        /* --- Navigation --- */
+        nav {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 25px 5%; background: var(--off-white); border-bottom: var(--border);
+            position: sticky; top: 0; z-index: 1000;
+        }
+        .logo { font-weight: 700; letter-spacing: 3px; text-transform: uppercase; }
+        nav .links a { text-decoration: none; color: var(--legacy-ink); margin-left: 30px; font-size: 0.85rem; font-weight: 700; }
+        .kai-nav { color: var(--pear) !important; }
+
+        /* --- Hero --- */
+        .hero { padding: 120px 10%; text-align: center; border-bottom: var(--border); position: relative; }
+        .hero h1 { font-size: 3.5rem; margin-bottom: 25px; }
+        .hero p { max-width: 800px; margin: 0 auto; font-weight: 300; font-size: 1.1rem; }
+        .roi-anchor { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; margin-top: 15px; display: block; opacity: 0.7; }
+
+        /* --- Process --- */
+        .process { padding: 80px 10%; border-bottom: var(--border); }
+        .process-list { list-style: none; max-width: 700px; margin: 40px auto 0; }
+        .process-list li { margin-bottom: 30px; border-left: 1px solid var(--lilac); padding-left: 20px; }
+        .process-list strong { color: var(--lilac); text-transform: uppercase; letter-spacing: 1px; font-size: 0.9rem; }
+
+        /* --- Detailed Menu Section --- */
+        .menu-section { padding: 100px 10%; }
+        
+        /* Highlighter Effect */
+        .highlight-header { 
+            display: inline-block; 
+            background: linear-gradient(to right, var(--pear) 50%, transparent 50%);
+            background-size: 200% 100%;
+            background-position: 100% 0;
+            padding: 5px 20px; 
+            font-size: clamp(2rem, 5vw, 3.5rem); 
+            margin-bottom: 60px;
+            transition: background-position 0.8s ease-out;
+            transform: rotate(-1deg);
+        }
+        .highlight-header.active { background-position: 0 0; }
+
+        /* Accordion Styling */
+        .accordion-item { border-top: var(--border); }
+        .category-btn {
+            width: 100%; padding: 40px 0; background: none; border: none;
+            border-bottom: var(--border); text-align: right; font-family: 'Playfair Display', serif;
+            font-size: 2.2rem; cursor: pointer; color: var(--legacy-ink); position: relative;
+            transition: 0.3s;
+        }
+        
+        .category-btn::after {
+            content: ""; position: absolute; bottom: -1px; right: 0;
+            width: 0; height: 2px; background: var(--lilac); transition: width 0.4s ease;
+        }
+        .category-btn:hover::after { width: 100%; }
+        .category-btn:hover { color: var(--lilac); }
+
+        .panel { padding: 0 0 60px 0; display: none; text-align: right; border-bottom: var(--border); }
+        
+        .service-detail { margin-top: 60px; padding-left: 25%; }
+        .service-detail h4 { font-size: 1.8rem; margin-bottom: 15px; }
+        .service-detail ul { list-style: none; margin: 20px 0; font-weight: 300; font-size: 0.95rem; }
+        .service-detail li { margin-bottom: 8px; }
+        
+        /* Buttons */
+        .work-btn {
+            background: var(--pear); color: var(--legacy-ink);
+            padding: 15px 40px; font-weight: 700; text-decoration: none;
+            display: inline-block; text-transform: uppercase; font-size: 0.85rem;
+            border: 1px solid var(--pear); transition: 0.3s; margin-top: 20px;
+        }
+        .work-btn:hover { background: var(--legacy-ink); color: var(--off-white); border-color: var(--legacy-ink); }
+
+        @media (max-width: 768px) { .service-detail { padding-left: 0; } .hero h1 { font-size: 2.5rem; } }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">Image & Co</div>
+        <div class="links">
+            <a href="index.html">HOME</a>
+            <a href="services.html">SERVICES</a>
+            <a href="media.html">MEDIA</a>
+            <a href="kai.html" class="kai-nav">MEET KAI</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <h1>Not Your Average Agency</h1>
+        <p>Image and Company isn't just a creative firm—we're a team of strategists, software developers, web designers, & some of the best marketing experts around. Why partner with four firms who don't even fully understand their role in your vision when you can partner with one who makes your business a personal matter.</p>
+        <p style="margin-top: 20px;">All of this started seven years ago in a dorm room—so nobody understands growth more than us. If we work we win—all we're waiting on is you.</p>
+        <span class="roi-anchor">Detail-Refined systems built for measurable ROI</span>
+    </section>
+
+    <section class="process">
+        <h2 style="text-align: center;">Let's start off with the process.</h2>
+        <ul class="process-list">
+            <li><strong>Select your Service</strong><br>Choose the service or system that best aligns with your bottleneck</li>
+            <li><strong>Roundtable</strong><br>We schedule a strategy-heavy session to discuss every need and want</li>
+            <li><strong>Build</strong><br>We design your assets and build your systems with a focus on conversion</li>
+            <li><strong>Delivery</strong><br>We hand over deliverables with clear walkthroughs</li>
+        </ul>
+    </section>
+
+    <section class="menu-section">
+        <div style="text-align: center;">
+            <h2 class="highlight-header" id="menu-trigger">The Detailed Menu</h2>
+        </div>
+
+        <div class="accordion">
+            <div class="accordion-item">
+                <button class="category-btn">Story Led Creative +</button>
+                <div class="panel">
+                    <div class="service-detail">
+                        <h4>Brand Story & Positioning Intensive | $450</h4>
+                        <ul>
+                            <li>- 60-90 minute strategy session</li>
+                            <li>- Core brand story + belief system bulletin</li>
+                            <li>- Brand pillars, audience narrative, and positioning board</li>
+                            <li>- Tone-of-voice guide & ready-to-use copy for site or socials</li>
+                            <li>- Campaign bank for future reference</li>
+                        </ul>
+                        <a href="contact.html?service=positioning-intensive" class="work-btn">Let's Work</a>
+                    </div>
+                    <div class="service-detail">
+                        <h4>Visual Identity & Mini Brand Suite | $850 - $1,200</h4>
+                        <ul>
+                            <li>- Primary Logo/wordmark + secondary mark</li>
+                            <li>- Color story + typography guide</li>
+                            <li>- 6-10 social or brand templates</li>
+                            <li>- Usage notes + Visual direction bulletin</li>
+                        </ul>
+                        <a href="contact.html?service=visual-identity" class="work-btn">Let's Work</a>
+                    </div>
+                    <div class="service-detail">
+                        <h4>Campaign/Product Launch Suite | $950 - $1,600</h4>
+                        <ul>
+                            <li>- Campaign or product launch positioning + naming</li>
+                            <li>- Launch flow + asset roadmap</li>
+                            <li>- Messaging pillars + hooks</li>
+                            <li>- Creative direction + mood board</li>
+                            <li>- Supporting promotional asset suite</li>
+                        </ul>
+                        <a href="contact.html?service=launch-suite" class="work-btn">Let's Work</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <button class="category-btn">Detail Refined Systems +</button>
+                <div class="panel">
+                    <div class="service-detail">
+                        <h4>CRM & Client Journey Setup | $550</h4>
+                        <ul>
+                            <li>- CRM build (Airtable, Notion, or Sheets)</li>
+                            <li>- Lead stages, tags, and workflows</li>
+                            <li>- End-to-end client journey map</li>
+                            <li>- Scripts, templates, and walkthrough</li>
+                        </ul>
+                        <a href="contact.html?service=crm-setup" class="work-btn">Let's Work</a>
+                    </div>
+                    <div class="service-detail">
+                        <h4>Webinar & Lead Capture Systems | $650 - $1,000</h4>
+                        <p style="font-size: 0.85rem; font-style: italic; margin-bottom: 10px;">Select one: Webinar/Workshop or Lead Magnet</p>
+                        <ul>
+                            <li>- Strategy call</li>
+                            <li>- Core asset design</li>
+                            <li>- Promotional graphics (editable files)</li>
+                            <li>- Delivery automation or slide decks</li>
+                        </ul>
+                        <a href="contact.html?service=lead-capture" class="work-btn">Let's Work</a>
+                    </div>
+                    <div class="service-detail">
+                        <h4>Software & Internal System Design | Starting at $750</h4>
+                        <p style="font-size: 0.85rem; font-weight: 300; margin-bottom: 10px;">Web-based builds including task management, inventory trackers, or onboarding platforms.</p>
+                        <a href="contact.html?service=software-systems" class="work-btn">Let's Work</a>
+                    </div>
+                    <div class="service-detail">
+                        <h4>Financial & Operations Systems | $750 - $1,200</h4>
+                        <ul>
+                            <li>- Revenue and expense tracking systems</li>
+                            <li>- Financial visibility dashboard</li>
+                            <li>- Accounting overview tools</li>
+                            <li>- Decision-support reporting</li>
+                        </ul>
+                        <a href="contact.html?service=financial-systems" class="work-btn">Let's Work</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <button class="category-btn">Ongoing Brand Partnerships +</button>
+                <div class="panel">
+                    <div class="service-detail">
+                        <h4>Monthly Brand Partnership Retainer | $850 - $1,200/monthly</h4>
+                        <ul>
+                            <li>- Priority async support</li>
+                            <li>- 4-6 deliverables monthly aligned to active or upcoming initiatives</li>
+                            <li>- Ongoing creative and systems direction</li>
+                            <li>- 2 strategy or working sessions per month</li>
+                        </ul>
+                        <a href="contact.html?service=monthly-retainer" class="work-btn">Let's Work</a>
+                    </div>
+                    <div class="service-detail">
+                        <h4>Launch Partner Package | $2,400 - $3,000</h4>
+                        <ul>
+                            <li>- Campaign or offer concept + mapping</li>
+                            <li>- Launch asset creation (landing page, slides, promo graphics, product labels, etc)</li>
+                            <li>- System or CRM alignment</li>
+                            <li>- Weekly check-ins during launch window</li>
+                            <li>- Post-launch recap + next-step recommendations</li>
+                        </ul>
+                        <a href="contact.html?service=launch-partner" class="work-btn">Let's Work</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <button class="category-btn">Signature Website Design +</button>
+                <div class="panel">
+                    <div class="service-detail">
+                        <h4>One Page Website Experience | $1,000</h4>
+                        <ul>
+                            <li>- Story-led one-page structure</li>
+                            <li>- Full design + mobile optimization</li>
+                            <li>- Clear CTA and conversion flow</li>
+                            <li>- 1 revision Round</li>
+                        </ul>
+                        <a href="contact.html?service=one-page-web" class="work-btn">Let's Work</a>
+                    </div>
+                    <div class="service-detail">
+                        <h4>Full Website Design | Starting at $1,600</h4>
+                        <ul>
+                            <li>- Narrative + UX structure</li>
+                            <li>- Design + copy editing</li>
+                            <li>- Mobile optimization + Launch asset</li>
+                        </ul>
+                        <a href="contact.html?service=full-web-design" class="work-btn">Let's Work</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Accordion Logic
+        var acc = document.getElementsByClassName("category-btn");
+        for (var i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function() {
+                var panel = this.nextElementSibling;
+                if (panel.style.display === "block") {
+                    panel.style.display = "none";
+                } else {
+                    panel.style.display = "block";
+                }
+            });
+        }
+
+        // Highlighter Observer Logic
+        const trigger = document.getElementById('menu-trigger');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    trigger.classList.add('active');
+                }
+            });
+        }, { threshold: 0.5 });
+        observer.observe(trigger);
+    </script>
+</body>
+</html>
