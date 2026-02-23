@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MEET KAI | Medical Inclusion & Childcare</title>
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <title>MEET KAI | Keeping All Intact</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@900&family=Fredoka:wght@400;600&family=Inter:wght@400;700&display=swap" rel="stylesheet">
     <style>
         :root {
             --kai-blue: #0004AA;
@@ -18,91 +18,115 @@
             background-color: var(--eggshell); 
             color: var(--kai-blue); 
             font-family: 'Inter', sans-serif;
+            text-align: center;
             overflow-x: hidden;
-            /* Floating Doodle Background */
-            background-image: url('data:image/svg+xml;utf8,<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="10" cy="10" r="2" fill="%23E2A9F1" opacity="0.4"/><path d="M80 20l5 5-5 5-5-5z" fill="%2329C5C9" opacity="0.4"/><path d="M40 70h10v2H40z" fill="%230004AA" opacity="0.2"/></svg>');
+            background-image: url('data:image/svg+xml;utf8,<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="10" cy="10" r="3" fill="%23E2A9F1" opacity="0.3"/><path d="M80 20l5 5-5 5-5-5z" fill="%2329C5C9" opacity="0.3"/><path d="M30 80l10-5v10z" fill="%230004AA" opacity="0.1"/></svg>');
         }
 
-        h1, h2, h3 { font-family: 'Fredoka', sans-serif; text-align: center; }
+        /* --- Typography --- */
+        .heavy-header {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(4rem, 15vw, 8rem);
+            line-height: 0.9;
+            text-transform: uppercase;
+            margin-bottom: 40px;
+        }
+        .heavy-header span { display: block; }
+        h2, h3 { font-family: 'Fredoka', sans-serif; }
 
         /* --- Navigation --- */
         nav {
             display: flex; justify-content: space-between; align-items: center;
-            padding: 25px 5%; background: var(--eggshell); border-bottom: 4px solid var(--kai-blue);
+            padding: 30px 5%; background: var(--eggshell); border-bottom: 4px solid var(--kai-blue);
             position: sticky; top: 0; z-index: 1000;
         }
-        .logo { font-weight: 600; font-size: 1.8rem; color: var(--kai-blue); }
-        nav a { text-decoration: none; color: var(--kai-blue); margin-left: 25px; font-weight: 700; }
+        .logo { font-family: 'Fredoka'; font-weight: 600; font-size: 2rem; color: var(--kai-blue); }
+        nav a { text-decoration: none; color: var(--kai-blue); margin-left: 30px; font-weight: 700; text-transform: uppercase; }
 
-        /* --- Layered Section Styling --- */
-        .container-block {
+        /* --- Section Styling --- */
+        .editorial-container {
             background: white;
             margin: 60px 5%;
-            padding: 80px 10%;
-            border-radius: 60px;
+            padding: 100px 10%;
+            border-radius: 80px;
             border: 4px solid var(--kai-blue);
-            box-shadow: 20px 20px 0px var(--laila-purple);
+            box-shadow: 25px 25px 0px var(--laila-purple);
             position: relative;
         }
 
-        /* --- SASF Medical Spotlight (High Interest) --- */
+        /* --- SASF Pulse Section --- */
         .sasf-spotlight {
             background: var(--kai-blue);
             color: white;
-            padding: 100px 10%;
+            padding: 120px 10%;
             border-radius: 80px;
-            margin: 40px 20px;
-            text-align: center;
+            margin: 60px 20px;
             border: 4px solid var(--kayson-blue);
-            box-shadow: 0 0 40px rgba(41, 197, 201, 0.4);
         }
         .sasf-card {
             background: white;
             color: var(--kai-blue);
-            padding: 50px;
-            border-radius: 40px;
-            margin-top: 30px;
+            padding: 60px;
+            border-radius: 50px;
             border: 4px solid var(--kayson-blue);
-            animation: pulse-glow 3s infinite;
+            max-width: 800px;
+            margin: 40px auto 0;
+            animation: pulse-ring 3s infinite;
         }
-        @keyframes pulse-glow {
-            0% { box-shadow: 0 0 15px rgba(41, 197, 201, 0.3); }
-            50% { box-shadow: 0 0 35px rgba(41, 197, 201, 0.6); }
-            100% { box-shadow: 0 0 15px rgba(41, 197, 201, 0.3); }
+        @keyframes pulse-ring {
+            0% { box-shadow: 0 0 0 0px rgba(41, 197, 201, 0.5); }
+            70% { box-shadow: 0 0 0 30px rgba(41, 197, 201, 0); }
+            100% { box-shadow: 0 0 0 0px rgba(41, 197, 201, 0); }
         }
+
+        /* --- Pricing Card --- */
+        .pricing-hero {
+            background: var(--kayson-blue);
+            padding: 80px;
+            border-radius: 60px;
+            border: 4px solid var(--kai-blue);
+            max-width: 600px;
+            margin: 80px auto;
+            box-shadow: 20px 20px 0px var(--kai-blue);
+        }
+        .price-text { font-family: 'Playfair Display'; font-size: 6rem; color: white; line-height: 1; }
 
         /* --- Comparison Table --- */
-        .comp-wrap { margin-top: 50px; border-radius: 40px; overflow: hidden; border: 4px solid var(--kai-blue); }
+        .comp-table {
+            border: 4px solid var(--kai-blue);
+            border-radius: 50px;
+            overflow: hidden;
+            max-width: 800px;
+            margin: 60px auto;
+        }
+        .comp-header { background: var(--kai-blue); color: white; padding: 30px; font-weight: 800; font-size: 1.5rem; }
         .comp-row { display: grid; grid-template-columns: 1fr 1fr; background: white; }
-        .comp-cell { padding: 25px; border-bottom: 1px solid #eee; display: flex; align-items: center; justify-content: center; text-align: center; }
+        .comp-cell { padding: 30px; border-bottom: 2px solid var(--eggshell); display: flex; align-items: center; justify-content: center; }
         .comp-us { background: #fdf6ff; border-right: 4px solid var(--kai-blue); font-weight: 700; }
-        .comp-header { background: var(--kai-blue); color: white; font-weight: 800; font-size: 1.4rem; }
 
-        /* --- Tilted Ticker --- */
+        /* --- Ticker --- */
         .ticker-bar {
-            background: var(--kayson-blue);
-            padding: 25px 0;
+            background: var(--laila-purple);
+            padding: 30px 0;
             transform: rotate(-1.5deg) scale(1.05);
             width: 115%;
-            margin-left: -7%;
+            margin: 100px -7.5%;
             border-top: 4px solid var(--kai-blue);
             border-bottom: 4px solid var(--kai-blue);
-            margin-top: 80px;
-            margin-bottom: 80px;
         }
-        .ticker-text { display: inline-block; white-space: nowrap; font-family: 'Fredoka'; font-size: 1.5rem; color: white; animation: scroll 30s linear infinite; }
+        .ticker-text { display: inline-block; white-space: nowrap; font-family: 'Fredoka'; font-size: 1.8rem; color: var(--kai-blue); animation: scroll 35s linear infinite; }
 
-        /* --- Feature Boxes --- */
-        .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; padding: 40px 5%; }
+        /* --- Feature Grid --- */
+        .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; padding: 40px 5%; }
         .feature-box {
             background: white;
-            padding: 40px;
-            border-radius: 40px;
+            padding: 60px 40px;
+            border-radius: 50px;
             border: 4px solid var(--kai-blue);
-            box-shadow: 10px 10px 0px var(--kayson-blue);
-            transition: 0.3s;
+            box-shadow: 15px 15px 0px var(--kayson-blue);
+            transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
-        .feature-box:hover { transform: translate(-5px, -5px); box-shadow: 15px 15px 0px var(--laila-purple); }
+        .feature-box:hover { transform: translateY(-10px); box-shadow: 20px 20px 0px var(--laila-purple); }
 
         @keyframes scroll { 0% { transform: translateX(100%); } 100% { transform: translateX(-100%); } }
     </style>
@@ -113,48 +137,65 @@
         <div class="logo">KAI</div>
         <div>
             <a href="index.html">HOME</a>
+            <a href="services.html">SERVICES</a>
             <a href="kai.html" style="color: var(--kayson-blue);">MEET KAI</a>
         </div>
     </nav>
 
-    <div class="container-block">
-        <h2 style="font-size: 3.5rem; margin-bottom: 20px;">At the Heart of it all</h2>
-        <p style="line-height: 1.8; font-size: 1.2rem; text-align: center;">The inspiration for KAI came from the same place most of greatest achievements have—from a conversation with my 4 year old son, Kai. Kai has Autism and Type 1 Diabetes, both of which he handles with such a gentle spirit[cite: 7, 12]. For families like mine life is so riddled by paperwork it really does feel like a second job sometimes[cite: 7, 12].</p>
-        <br>
-        <p style="line-height: 1.8; font-size: 1.2rem; text-align: center;">My job is being able to identify pain points, so I did—childcare is one of the few things destined to affect most families. KAI is a love letter to families and center owners alike because it's designed with you both in mind. Launching February 26.</p>
-    </div>
+    <section class="editorial-container">
+        <h1 class="heavy-header">
+            <span>At</span>
+            <span>The</span>
+            <span>Heart</span>
+        </h1>
+        <p style="font-size: 1.3rem; line-height: 1.8; max-width: 900px; margin: 0 auto;">The inspiration for KAI came from the same place most of greatest achievements have—from a conversation with my 4 year old son, Kai. Kai has Autism and Type 1 Diabetes, both of which he handles with such a gentle spirit. For families like mine life is so riddled by paperwork it really does feel like a second job sometimes. Launching February 26, I'm a mom and entrepreneur who built an app for moms and entrepreneurs alike.</p>
+    </section>
 
     <section class="sasf-spotlight">
-        <h2 style="font-size: 2.8rem;">Special Alerts for Special Friends</h2>
+        <h1 class="heavy-header" style="color: white; font-size: 6rem;">
+            <span>SASF</span>
+            <span>ALERTS</span>
+        </h1>
         <div class="sasf-card">
-            <h3 style="margin-bottom: 15px;">2-Factor Medical Management</h3>
-            <p>Named SASF, this two factor alert system with a pulse and sound goes off when scheduled. When dismissed, it triggers the appropriate area (admin or nurse) to confirm medication dosage with real time notifications for parents.</p>
+            <h3 style="font-size: 2rem; margin-bottom: 20px;">2-Factor Medical Alert & Management</h3>
+            <p style="font-size: 1.1rem; line-height: 1.6;">Named SASF (Special Alerts for Special Friends), this two factor alert system with a pulse and sound, goes off when scheduled and when dismissed triggers the appropriate area (admin or nurse) to confirm medication dosage or session start with documentation built in and real time notifications for parents.</p>
         </div>
     </section>
 
-    <div class="container-block">
-        <h2 style="font-size: 2.8rem;">MAKE THE SWITCH!</h2>
-        <div class="comp-wrap">
-            <div class="comp-row"><div class="comp-header comp-us">US (KAI)</div><div class="comp-header" style="background:#888;">THEM</div></div>
-            <div class="comp-row"><div class="comp-cell comp-us">$110 / Monthly [cite: 107]</div><div class="comp-cell">$200-500 / Monthly [cite: 122]</div></div>
-            <div class="comp-row"><div class="comp-cell comp-us">Built By a Mom [cite: 111]</div><div class="comp-cell">Built by VCs [cite: 121, 126]</div></div>
-            <div class="comp-row"><div class="comp-cell comp-us">3 Focusing Tiers [cite: 113]</div><div class="comp-cell">20 Features You'll Never Use [cite: 128, 129]</div></div>
-            <div class="comp-row"><div class="comp-cell comp-us">30-Min Setup [cite: 115]</div><div class="comp-cell">3-Day Onboarding [cite: 130]</div></div>
+    <section class="pricing-hero">
+        <p style="text-transform: uppercase; font-weight: 800; letter-spacing: 4px; color: var(--kai-blue); margin-bottom: 10px;">Everything Unlimited</p>
+        <div class="price-text">$110</div>
+        <p style="font-weight: 700; color: var(--kai-blue);">PER MONTH</p>
+        <p style="margin-top: 20px; font-size: 0.9rem; font-weight: 600;">3 FOCUSES: PAPERWORK, PEOPLE, AND PAYMENTS.</p>
+    </section>
+
+    <div class="editorial-container">
+        <h2 style="font-family: 'Playfair Display'; font-size: 4rem; margin-bottom: 40px;">MAKE THE SWITCH!</h2>
+        <div class="comp-table">
+            <div class="comp-row"><div class="comp-header comp-us">KAI (US)</div><div class="comp-header" style="background:#666;">THEM</div></div>
+            <div class="comp-row"><div class="comp-cell comp-us">$110 / Monthly</div><div class="comp-cell">$200-500 / Monthly</div></div>
+            <div class="comp-row"><div class="comp-cell comp-us">Built By a Mom</div><div class="comp-cell">Built by VCs</div></div>
+            <div class="comp-row"><div class="comp-cell comp-us">3 Strategic Focuses</div><div class="comp-cell">20 Bloated Features</div></div>
+            <div class="comp-row"><div class="comp-cell comp-us">30-Min Setup</div><div class="comp-cell">3-Day Onboarding</div></div>
         </div>
     </div>
 
     <div class="ticker-bar">
         <div class="ticker-text">
-            SASF MEDICAL INCLUSION // MEMPHIS-MADE // MOM-APPROVED // SASF MEDICAL INCLUSION // MEMPHIS-MADE // MOM-APPROVED
+            MEMPHIS-MADE // MOM-APPROVED // INCLUSIVE TECH // MEMPHIS-MADE // MOM-APPROVED // INCLUSIVE TECH
         </div>
     </div>
 
     <div class="feature-grid">
-        <div class="feature-box"><h3>Ouch Log</h3><p>Streamlined incident reporting with real time notifications and photo documentation[cite: 12, 60, 61].</p></div>
-        <div class="feature-box"><h3>Audit Dashboard</h3><p>Prepare for audits and recall records easily in 15 seconds or less[cite: 12, 42, 54].</p></div>
-        <div class="feature-box"><h3>Digital Enrollment</h3><p>Piles of paperwork are a thing of the past with field detectors and e-signatures[cite: 12, 21, 25, 39].</p></div>
-        <div class="feature-box"><h3>Bank-Level Security</h3><p>Records are stored securely and encrypted in compliance with state laws[cite: 12, 186, 187, 197, 198].</p></div>
+        <div class="feature-box"><h3>Ouch Log</h3><p>Streamlined incident reporting, with real time parent notifications and photo documentation.</p></div>
+        <div class="feature-box"><h3>Audit Dashboard</h3><p>Prepare for audits and recall records easily in 15 seconds or less.</p></div>
+        <div class="feature-box"><h3>Digital Enrollment</h3><p>Easy document uploads and e-signature capabilities for parents.</p></div>
+        <div class="feature-box"><h3>Bank-Level Security</h3><p>Encrypted data storage and compliance with state retention laws.</p></div>
     </div>
+
+    <footer style="padding: 80px 0; border-top: 4px solid var(--kai-blue);">
+        <p style="font-family: 'Fredoka'; font-weight: 600;">KAI, copyright 2026, is an Image and Company Product.</p>
+    </footer>
 
 </body>
 </html>
