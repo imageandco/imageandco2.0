@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media & Foundher | Image & Co</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --legacy-ink: #1E1B24;
+            --off-white: #FFFEEC;
+            --lilac: #A88AED;
+            --pear: #CBD83B;
+            --border: 1px solid var(--legacy-ink);
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { background-color: var(--off-white); color: var(--legacy-ink); font-family: 'Inter', sans-serif; line-height: 1.6; text-align: center; }
+        h1, h2, h3 { font-family: 'Playfair Display', serif; }
+
+        /* --- Navigation --- */
+        nav {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 25px 5%; background: var(--off-white); border-bottom: var(--border);
+            position: sticky; top: 0; z-index: 1000;
+        }
+        .logo { font-weight: 700; letter-spacing: 3px; text-transform: uppercase; }
+        nav .links a { text-decoration: none; color: var(--legacy-ink); margin-left: 30px; font-size: 0.85rem; font-weight: 700; }
+        .kai-nav { color: var(--pear) !important; }
+
+        /* --- Foundher Section --- */
+        .foundher-hero { width: 100%; max-height: 500px; object-fit: cover; border-bottom: var(--border); }
+        
+        .foundher-content { padding: 80px 10%; max-width: 900px; margin: 0 auto; }
+        .foundher-content p { font-size: 1.1rem; margin: 20px 0 40px; font-weight: 300; }
+        .foundher-title { font-style: italic; color: var(--legacy-ink); font-weight: 700; }
+
+        /* --- Nomination Form --- */
+        .form-container { 
+            max-width: 600px; margin: 0 auto 100px; padding: 40px; 
+            border: 1px solid var(--lilac); background: transparent;
+        }
+        .form-group { margin-bottom: 20px; text-align: left; }
+        label { display: block; font-size: 0.8rem; font-weight: 700; margin-bottom: 5px; text-transform: uppercase; }
+        .hint { font-size: 0.7rem; color: var(--lilac); font-style: italic; margin-top: 4px; display: block; }
+        
+        input, textarea {
+            width: 100%; padding: 12px; background: transparent; 
+            border: 1px solid var(--legacy-ink); font-family: 'Inter', sans-serif;
+            color: var(--legacy-ink); outline: none;
+        }
+
+        .nominate-btn {
+            background: var(--pear); color: var(--legacy-ink);
+            border: 1px solid var(--pear); padding: 15px 40px; font-weight: 700; 
+            text-transform: uppercase; cursor: pointer; transition: all 0.3s ease;
+            width: 100%;
+        }
+        .nominate-btn:hover { background: var(--legacy-ink); color: var(--off-white); border-color: var(--legacy-ink); }
+
+        /* --- Media Coverage (Coming Soon) --- */
+        .coverage { padding: 100px 10%; border-top: var(--border); }
+        .coverage h2 { font-size: 2.5rem; margin-bottom: 15px; }
+        
+        .coming-soon-card {
+            margin: 40px auto; padding: 60px; border: 1px solid var(--lilac);
+            max-width: 600px; display: flex; flex-direction: column; align-items: center;
+        }
+        .notify-btn {
+            margin-top: 20px; padding: 10px 25px; border: 1px solid var(--legacy-ink);
+            text-decoration: none; color: var(--legacy-ink); font-size: 0.8rem;
+            font-weight: 700; text-transform: uppercase; transition: 0.3s;
+        }
+        .notify-btn:hover { background: var(--pear); border-color: var(--pear); }
+
+        /* --- Architectural Collabs Section --- */
+        .collabs { 
+            display: flex; flex-direction: column; align-items: center; 
+            border-top: var(--border); background: var(--legacy-ink); 
+            color: var(--off-white); padding: 120px 10%; 
+        }
+        .collab-wrapper {
+            border-left: 1px solid var(--pear); padding-left: 30px; 
+            text-align: left; max-width: 600px;
+        }
+        .collab-wrapper h2 { color: var(--pear); text-align: left; font-size: 3rem; margin-bottom: 20px; }
+        .collab-wrapper p { font-weight: 300; letter-spacing: 0.5px; margin-bottom: 20px; }
+        .email-link { 
+            color: var(--off-white); text-decoration: underline; 
+            text-underline-offset: 8px; font-weight: 700; font-size: 1.1rem;
+        }
+        .email-link:hover { color: var(--pear); }
+
+        @media (max-width: 768px) { .foundher-content { padding: 40px 5%; } .collab-wrapper { border-left: none; border-top: 1px solid var(--pear); padding: 20px 0; } }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">Image & Co</div>
+        <div class="links">
+            <a href="index.html">HOME</a>
+            <a href="services.html">SERVICES</a>
+            <a href="media.html">MEDIA</a>
+            <a href="kai.html" class="kai-nav">MEET KAI</a>
+        </div>
+    </nav>
+
+    <section>
+        <img src="Foundhers.Png" alt="Image and Company Foundher Initiative - Supporting Memphis Women in Business" class="foundher-hero">
+        <div class="foundher-content">
+            <p>We're launching our <span class="foundher-title">Foundher</span> initiative to highlight all the local women-owned businesses in honor of Women's Month. If you are or know of a woman deserving of the spotlight we'd love the opportunity to highlight her and her journey in this digital storytelling series. We see you, we hear you, and we would love the chance to honor you! Happy Women's Month to all of us, and we're sending lots of extra x's and o's from one woman-owned business to another.</p>
+            
+            <div class="form-container">
+                <form action="mailto:contact@imageandcompany.com?subject=Foundher Nomination" method="post" enctype="text/plain">
+                    <div class="form-group">
+                        <label>Name</label>
+                        <input type="text" name="Name" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Phone Number</label>
+                        <input type="tel" name="Phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Business Name</label>
+                        <input type="text" name="BusinessName" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Website Link (Optional)</label>
+                        <input type="url" name="Website">
+                        <span class="hint">We love to see their work!</span>
+                    </div>
+                    <div class="form-group">
+                        <label>Tell us about HER</label>
+                        <textarea name="Message" rows="4" placeholder="tell us about HER" required></textarea>
+                    </div>
+                    <button type="submit" class="nominate-btn">Nominate A FoundHer</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section class="coverage">
+        <h2>Catchup on what we've been up to!</h2>
+        <p>To view or listen to our previous media coverage check it out below!</p>
+        
+        <div class="coming-soon-card">
+            <p style="font-style: italic; opacity: 0.7;">No links yet, check back soon for more details!</p>
+            <a href="mailto:Media@ImageandCompany.Com?subject=Notify Me of Coverage" class="notify-btn">Notify Me of New Coverage</a>
+        </div>
+    </section>
+
+    <section class="collabs">
+        <div class="collab-wrapper">
+            <h2>We <3 collabs</h2>
+            <p>If you're interested in covering Image and Company or want to partner with us for your next initiative, event, or project, let's connect.</p>
+            <a href="mailto:Media@ImageandCompany.Com?subject=Partnership Inquiry" class="email-link">Media@ImageandCompany.Com</a>
+        </div>
+    </section>
+
+</body>
+</html>
