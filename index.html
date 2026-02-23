@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image & Co | Strategy & Software</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --legacy-ink: #1E1B24;    /* Deep purple-black */
+            --off-white: #FFFEEC;     /* Editorial paper base */
+            --lilac: #A88AED;         /* Creative accent */
+            --pear: #CBD83B;          /* Action color */
+            --border-style: 1px solid var(--legacy-ink);
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            background-color: var(--off-white);
+            color: var(--legacy-ink);
+            font-family: 'Inter', sans-serif;
+            line-height: 1.5;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3 { font-family: 'Playfair Display', serif; text-align: center; }
+
+        /* --- Navigation --- */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 25px 5%;
+            background: var(--off-white);
+            border-bottom: var(--border-style);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo { font-weight: 700; letter-spacing: 3px; font-size: 1.1rem; text-transform: uppercase; }
+
+        nav .links a {
+            text-decoration: none;
+            color: var(--legacy-ink);
+            margin-left: 30px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .kai-nav { color: var(--pear) !important; font-weight: 900 !important; }
+
+        /* --- Hero Section --- */
+        .hero {
+            position: relative;
+            height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-image: url('Iandchero.png'); /* 15% opacity intent */
+            background-size: cover;
+            background-position: center;
+            border-bottom: var(--border-style);
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: var(--off-white);
+            opacity: 0.85; /* Effectively shows 15% of the image */
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-size: clamp(3rem, 8vw, 6rem);
+            line-height: 0.9;
+            margin-bottom: 25px;
+            letter-spacing: -2px;
+        }
+
+        .hero h1 span { font-style: italic; display: block; margin-top: 10px; }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 550px;
+            margin: 0 auto;
+            font-weight: 300;
+            letter-spacing: 0.5px;
+        }
+
+        /* --- Ticker Banner --- */
+        .ticker {
+            background: var(--pear);
+            border-bottom: var(--border-style);
+            padding: 15px 0;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        .ticker-wrap {
+            display: inline-block;
+            animation: scroll 30s linear infinite;
+        }
+
+        .ticker-item {
+            display: inline-block;
+            font-weight: 700;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            padding: 0 20px;
+        }
+
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        /* --- Strategy Section --- */
+        .strategy { padding: 120px 10%; border-bottom: var(--border-style); }
+        
+        .strategy h2 { 
+            color: var(--lilac); 
+            font-size: 3rem; 
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+        }
+
+        .strategy-intro { 
+            max-width: 700px; 
+            margin: 0 auto 60px auto; 
+            text-align: center;
+            font-size: 1.1rem;
+        }
+
+        .flex-grid {
+            display: flex;
+            gap: 40px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .box {
+            flex: 1;
+            min-width: 320px;
+            border: 1px solid var(--lilac);
+            padding: 50px 40px;
+            text-align: center;
+            background: transparent;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .box h3 { font-size: 1.6rem; margin-bottom: 20px; line-height: 1.2; }
+
+        .btn {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 15px 35px;
+            background: var(--pear);
+            color: var(--legacy-ink);
+            text-decoration: none;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            transition: all 0.3s;
+        }
+
+        .btn:hover { background: var(--legacy-ink); color: var(--off-white); }
+
+        /* --- Logo Banner --- */
+        .logos {
+            padding: 80px 5%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 60px;
+            border-bottom: var(--border-style);
+        }
+
+        .logos img { filter: grayscale(100%); opacity: 0.4; height: 35px; }
+
+        /* --- Scale Section --- */
+        .scale {
+            padding: 100px 10%;
+            text-align: center;
+            border-bottom: var(--border-style);
+        }
+
+        .scale h2 { font-size: 3.5rem; margin-bottom: 15px; }
+
+        /* --- KAI Flagship Section --- */
+        .kai-section {
+            background: var(--legacy-ink);
+            color: var(--off-white);
+            padding: 150px 10%;
+            text-align: center;
+        }
+
+        .kai-section h2 { color: var(--off-white); font-size: 4rem; margin-bottom: 20px; }
+        .kai-section p { font-size: 1.3rem; margin-bottom: 40px; font-weight: 300; }
+        
+        .kai-cta {
+            background: var(--off-white);
+            color: var(--legacy-ink);
+            padding: 20px 50px;
+            text-decoration: none;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 1rem;
+        }
+
+        /* --- Responsiveness --- */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 3rem; }
+            .flex-grid { flex-direction: column; }
+            .logos { flex-direction: column; gap: 40px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">Image & Co</div>
+        <div class="links">
+            <a href="index.html">HOME</a>
+            <a href="services.html">SERVICES</a>
+            <a href="media.html">MEDIA</a>
+            <a href="kai.html" class="kai-nav">MEET KAI</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Story-Led. Detail-Refined. <span>Brands Reimagined.</span></h1>
+            <p>Clarity, positioning, and visual direction that make everything else work. We help founders not only look credible—but operate clearly.</p>
+        </div>
+    </section>
+
+    <div class="ticker">
+        <div class="ticker-wrap">
+            <span class="ticker-item">STYLE // STRATEGY // SOFTWARE // KAI SAAS //</span>
+            <span class="ticker-item">STYLE // STRATEGY // SOFTWARE // KAI SAAS //</span>
+            <span class="ticker-item">STYLE // STRATEGY // SOFTWARE // KAI SAAS //</span>
+            <span class="ticker-item">STYLE // STRATEGY // SOFTWARE // KAI SAAS //</span>
+        </div>
+    </div>
+
+    <section class="strategy">
+        <h2>Clarity creates conversions</h2>
+        <p class="strategy-intro">The first quarter is about owning the lane of launch and lead capture infrastructure. We have you covered—stress-free, sales-focused offers that will keep you ahead of the curve and competition.</p>
+        
+        <div class="flex-grid">
+            <div class="box">
+                <h3>Webinar and Lead Capture Systems</h3>
+                <p>We design the landing page, slides, and systems that turn into signups and sales.</p>
+                <a href="services.html#detail-refined" class="btn">View Details</a>
+            </div>
+            <div class="box">
+                <h3>Brand Story & Positioning Intensive</h3>
+                <p>Messaging confusion and offer clarity resolved before you execute.</p>
+                <a href="services.html#story-led" class="btn">View Details</a>
+            </div>
+        </div>
+    </section>
+
+    <div class="logos">
+        <img src="clientlogo1.png" alt="Client 1">
+        <img src="clientlogo2.png" alt="Client 2">
+        <img src="clientlogo3.png" alt="Client 3">
+    </div>
+
+    <section class="scale">
+        <h2>Scale Smarter.</h2>
+        <p>Structure creates momentum. We don’t just brand ideas—we build systems that support them.</p>
+        <a href="services.html" class="btn" style="background: var(--legacy-ink); color: #fff;">View Detailed Menu</a>
+    </section>
+
+    <section class="kai-section">
+        <h2>Problem solvers by design</h2>
+        <p>Meet KAI, Keeping All Intact. A Memphis-made, mom-approved childcare companion.</p>
+        <a href="kai.html" class="kai-cta">See What's Coming</a>
+    </section>
+
+</body>
+</html>
