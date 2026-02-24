@@ -20,11 +20,10 @@
             font-family: 'Inter', sans-serif;
             text-align: center;
             overflow-x: hidden;
-            /* Subtle paper texture */
             background-image: url('https://www.transparenttextures.com/patterns/paper-fibers.png');
         }
 
-        /* --- Massive Floating Doodles (Centered in At The Heart) --- */
+        /* --- Floating Doodles (Massive) --- */
         .editorial-container { position: relative; padding: 80px 8%; z-index: 1; }
         .massive-doodle { 
             position: absolute; 
@@ -43,16 +42,26 @@
             font-size: clamp(4rem, 15vw, 10rem);
             line-height: 0.8;
             text-transform: uppercase;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
         }
         .heavy-header span { display: block; }
         
+        .acronym-sub {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            letter-spacing: 12px;
+            text-transform: uppercase;
+            margin-bottom: 60px;
+            opacity: 0.8;
+        }
+
         .signature {
             font-family: 'Birthstone', cursive;
-            font-size: 4rem;
+            font-size: 4.5rem;
             color: var(--kai-blue);
             margin-top: 20px;
             display: block;
+            transform: rotate(-2deg);
         }
 
         /* --- Navigation --- */
@@ -64,8 +73,16 @@
         .nav-logo { font-family: 'Playfair Display', serif; font-weight: 900; font-size: 1.8rem; }
         nav .links a { text-decoration: none; color: var(--kai-blue); margin-left: 20px; font-weight: 700; font-size: 0.85rem; }
 
-        /* --- Banner --- */
-        .kai-banner { background: var(--kai-blue); color: var(--eggshell); padding: 40px 0; border-bottom: 4px solid var(--kayson-blue); }
+        /* --- Organic Shape (Spanish Class Vibe) --- */
+        .organic-transition {
+            background: white;
+            padding: 100px 5%;
+            clip-path: ellipse(120% 100% at 50% 100%);
+            margin-top: -50px;
+            position: relative;
+            z-index: 2;
+            border-bottom: 4px solid var(--kai-blue);
+        }
 
         /* --- Automatic Feature Carousel --- */
         .carousel-outer {
@@ -90,7 +107,6 @@
             border: 4px solid var(--kai-blue);
             box-shadow: 10px 10px 0px var(--laila-purple);
             flex-shrink: 0;
-            text-align: center;
         }
         .feature-box h3 { font-family: 'Fredoka', sans-serif; margin-bottom: 10px; font-size: 1.2rem; color: var(--kayson-blue); }
         .feature-box p { font-size: 0.85rem; line-height: 1.4; }
@@ -100,30 +116,24 @@
             100% { transform: translateX(calc(-340px * 8)); }
         }
 
-        /* --- High Impact Pricing Card --- */
-        .pricing-section {
-            padding: 120px 5%;
-            background: white;
-            border-top: 4px solid var(--kai-blue);
-        }
+        /* --- Pricing Card --- */
         .massive-price-card {
             max-width: 900px;
             margin: 0 auto;
-            padding: 80px 20px;
+            padding: 60px 20px;
         }
-        .price-label { text-transform: uppercase; font-weight: 800; letter-spacing: 5px; font-size: 1.2rem; margin-bottom: 10px; display: block;}
+        .price-label { text-transform: uppercase; font-weight: 800; letter-spacing: 5px; font-size: 1.2rem; }
         .massive-price {
             font-family: 'Playfair Display', serif;
             font-size: clamp(6rem, 25vw, 15rem);
             line-height: 0.9;
-            color: var(--kai-blue);
             margin: 20px 0;
         }
 
         /* --- Comparison Table --- */
-        .comp-wrap { margin: 60px auto; border-radius: 30px; overflow: hidden; border: 4px solid var(--kai-blue); max-width: 800px; background: white; }
-        .comp-row { display: grid; grid-template-columns: 1fr 1fr; }
-        .comp-cell { padding: 20px; border-bottom: 2px solid var(--eggshell); display: flex; align-items: center; justify-content: center; font-size: 0.95rem; }
+        .comp-wrap { margin: 60px auto; border-radius: 30px; overflow: hidden; border: 4px solid var(--kai-blue); max-width: 850px; background: white; }
+        .comp-row { display: grid; grid-template-columns: 1fr 1fr; border-bottom: 1px solid var(--eggshell); }
+        .comp-cell { padding: 25px; display: flex; align-items: center; justify-content: center; font-size: 0.95rem; }
         .comp-us { background: #fdf6ff; border-right: 4px solid var(--kai-blue); font-weight: 700; }
         .comp-header { background: var(--kai-blue); color: white; padding: 20px; font-weight: 800; font-size: 1.1rem; }
 
@@ -131,33 +141,13 @@
         .ticker-straight { background: var(--kayson-blue); padding: 20px 0; border-top: 4px solid var(--kai-blue); border-bottom: 4px solid var(--kai-blue); overflow: hidden; }
         .ticker-text { display: inline-block; white-space: nowrap; font-family: 'Fredoka'; font-size: 1.5rem; color: white; animation: scroll 30s linear infinite; }
 
-        /* --- High Contrast Pledge --- */
-        .pledge-section {
-            background: var(--kai-blue);
-            color: var(--eggshell);
-            padding: 120px 10%;
-            border-top: 4px solid var(--kayson-blue);
-        }
-        .pledge-section .heavy-header { color: var(--eggshell); }
-        .pledge-btn {
-            background: var(--eggshell);
-            color: var(--kai-blue);
-            padding: 25px 80px;
-            border-radius: 100px;
-            border: none;
-            font-weight: 800;
-            font-size: 1.4rem;
-            cursor: pointer;
-            transition: 0.3s;
-            margin-top: 40px;
-        }
-        .pledge-btn:hover { transform: scale(1.05); background: var(--kayson-blue); color: white; }
+        /* --- Pledge --- */
+        .pledge-section { background: var(--kai-blue); color: var(--eggshell); padding: 120px 10%; }
+        .pledge-btn { background: var(--eggshell); color: var(--kai-blue); padding: 25px 80px; border-radius: 100px; border: none; font-weight: 800; font-size: 1.4rem; cursor: pointer; transition: 0.3s; margin-top: 40px; }
+        .pledge-btn:hover { background: var(--kayson-blue); color: white; }
 
-        /* --- Modal --- */
         .modal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0, 4, 170, 0.6); backdrop-filter: blur(8px); }
-        .modal-content { background: var(--eggshell); margin: 5% auto; padding: 40px; border-radius: 40px; width: 90%; max-width: 500px; border: 4px solid var(--kai-blue); text-align: left; }
-
-        footer { padding: 40px; background: var(--eggshell); border-top: 4px solid var(--kai-blue); color: var(--kai-blue); font-weight: 700; }
+        .modal-content { background: var(--eggshell); margin: 5% auto; padding: 40px; border-radius: 40px; width: 90%; max-width: 500px; border: 4px solid var(--kai-blue); color: var(--kai-blue); text-align: left; }
 
         @keyframes scroll { 0% { transform: translateX(100%); } 100% { transform: translateX(-100%); } }
     </style>
@@ -176,44 +166,23 @@
 
     <div class="kai-banner">
         <h1 class="heavy-header" style="font-size: 5rem;">MEET<span>KAI</span></h1>
+        <div class="acronym-sub">Keeping All Intact [cite: 16]</div>
     </div>
 
     <section class="editorial-container">
-        <svg class="massive-doodle" style="top:-10%; left:-10%; width:300px;" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" stroke="var(--laila-purple)" stroke-width="2" fill="none"/></svg>
-        <svg class="massive-doodle" style="bottom:0; right:-5%; width:350px; animation-delay: -4s;" viewBox="0 0 100 100"><path d="M20 20 L80 80 M80 20 L20 80" stroke="var(--kayson-blue)" stroke-width="2"/></svg>
-        <svg class="massive-doodle" style="top:20%; right:5%; width:150px; opacity:0.1;" viewBox="0 0 100 100"><rect x="20" y="20" width="60" height="60" stroke="var(--kai-blue)" stroke-width="2" fill="none"/></svg>
+        <svg class="massive-doodle" style="top:-5%; left:-5%; width:400px;" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" stroke="var(--laila-purple)" stroke-width="2" fill="none"/></svg>
+        <svg class="massive-doodle" style="bottom:5%; right:-5%; width:450px; animation-delay: -4s;" viewBox="0 0 100 100"><path d="M20 20 L80 80 M80 20 L20 80" stroke="var(--kayson-blue)" stroke-width="2"/></svg>
 
         <h1 class="heavy-header">AT<span>THE</span><span>HEART</span></h1>
-        <div style="max-width: 800px; margin: 0 auto; font-size: 1.2rem; line-height: 1.8; position: relative;">
-            <p>The inspiration for KAI came from the same place most of greatest achievements have—from a conversation with my 4 year old son, Kai. We were sitting in the office of his speech therapist filling out a stack of papers, in an attempt to get another stack of paper for our upcoming daycare tours. Kai has Autism and Type 1 Diabetes, both of which he handles with such a gentle spirit and sometimes force him to exercise his patience—a patience that has never extended to his curiosity.</p>
+        <div style="max-width: 700px; margin: 0 auto; font-size: 1.2rem; line-height: 1.8; position: relative;">
+            <p>The inspiration for KAI came from the same place most of greatest achievements have—from a conversation with my 4 year old son, Kai[cite: 12]. We were sitting in the office of his speech therapist filling out a stack of papers, in an attempt to get another stack of paper for our upcoming daycare tours[cite: 12]. Kai has Autism and Type 1 Diabetes, both of which he handles with such a gentle spirit and sometimes force him to exercise his patience—a patience that has never extended to his curiosity[cite: 12].</p>
             <br>
-            <p>For families like mine life is so riddled by paperwork it really does feel like a second job sometimes. KAI is a love letter to families and center owners/directors alike because it's designed with you both in mind. I'm not a silicon valley tech startup, I'm a mom and entrepreneur who built an app for moms and entrepreneurs alike.</p>
-            <span class="signature">Kayla, Image & Co Founder </span>
+            <p>For families like mine life is so riddled by paperwork it really does feel like a second job sometimes[cite: 12]. KAI is a love letter to families and center owners/directors alike because it's designed with you both in mind[cite: 12]. I'm not a silicon valley tech startup, I'm a mom and entrepreneur who built an app for moms and entrepreneurs alike[cite: 12].</p>
+            <span class="signature">Kayla, Image & Co Founder [cite: 12]</span>
         </div>
     </section>
 
-    <div class="carousel-outer">
-        <div class="carousel-track">
-            <div class="feature-box"><h3>Ouch Log</h3><p>Streamlined incident reporting, with real time parent notifications and photo documentation.</p></div>
-            <div class="feature-box"><h3>Digital Enrollment</h3><p>Piles of paperwork are a thing of the past—with field detectors, e-signature, and easy uploads.</p></div>
-            <div class="feature-box"><h3>Intact E-checkin</h3><p>Verify health and drop-off authorization with two clicks.</p></div>
-            <div class="feature-box"><h3>Audit Dashboard</h3><p>Prepare for audits and recall records in 15 seconds or less.</p></div>
-            <div class="feature-box"><h3>Messaging + Photos</h3><p>Timeline flow for center blasts, teacher questions, and art moments.</p></div>
-            <div class="feature-box"><h3>2-Factor Medical</h3><p>SASF system triggers a pulse and sound alert to confirm medication dosage.</p></div>
-            <div class="feature-box"><h3>Classroom Mode</h3><p>Pin-locked classroom mode to protect sensitive admin data.</p></div>
-            <div class="feature-box"><h3>Bank-Level Security</h3><p>Stored securely and encrypted in compliance with state laws.</p></div>
-            <div class="feature-box"><h3>Ouch Log</h3><p>Streamlined incident reporting, with real time parent notifications and photo documentation.</p></div>
-            <div class="feature-box"><h3>Digital Enrollment</h3><p>Piles of paperwork are a thing of the past—with field detectors, e-signature, and easy uploads.</p></div>
-            <div class="feature-box"><h3>Intact E-checkin</h3><p>Verify health and drop-off authorization with two clicks.</p></div>
-            <div class="feature-box"><h3>Audit Dashboard</h3><p>Prepare for audits and recall records in 15 seconds or less.</p></div>
-            <div class="feature-box"><h3>Messaging + Photos</h3><p>Timeline flow for center blasts, teacher questions, and art moments.</p></div>
-            <div class="feature-box"><h3>2-Factor Medical</h3><p>SASF system triggers a pulse and sound alert to confirm medication dosage.</p></div>
-            <div class="feature-box"><h3>Classroom Mode</h3><p>Pin-locked classroom mode to protect sensitive admin data.</p></div>
-            <div class="feature-box"><h3>Bank-Level Security</h3><p>Stored securely and encrypted in compliance with state laws.</p></div>
-        </div>
-    </div>
-
-    <section class="pricing-section">
+    <section class="organic-transition">
         <div class="massive-price-card">
             <span class="price-label">Keep All Intact [cite: 16]</span>
             <h2 class="massive-price">$110</h2>
@@ -222,51 +191,59 @@
         </div>
     </section>
 
-    <div class="ticker-straight">
-        <div class="ticker-text">MEMPHIS-BUILT // MOM-APPROVED // INCLUSIVE TECH // MEMPHIS-BUILT // MOM-APPROVED // INCLUSIVE TECH</div>
+    <div class="carousel-outer">
+        <div class="carousel-track">
+            <div class="feature-box"><h3>Ouch Log</h3><p>Streamlined incident reporting, with real time parent notifications and photo documentation.</p></div>
+            <div class="feature-box"><h3>Digital Enrollment</h3><p>Piles of paperwork are a thing of the past—with field detectors, e-signature, and easy uploads.</p></div>
+            <div class="feature-box"><h3>Intact E-checkin</h3><p>Verify health and drop-off authorization with two clicks.</p></div>
+            <div class="feature-box"><h3>Audit Dashboard</h3><p>Recall records and prepare for audits in 15 seconds or less.</p></div>
+            <div class="feature-box"><h3>Messaging + Photos</h3><p>Timeline flow for center blasts, teacher questions, and art moments.</p></div>
+            <div class="feature-box"><h3>2-Factor Medical</h3><p>SASF system triggers a pulse and sound alert to confirm medication dosage.</p></div>
+            <div class="feature-box"><h3>Classroom Mode</h3><p>Pin-locked classroom mode to protect sensitive admin data.</p></div>
+            <div class="feature-box"><h3>Bank-Level Security</h3><p>Stored securely and encrypted in compliance with state laws.</p></div>
+            <div class="feature-box"><h3>Ouch Log</h3><p>Streamlined incident reporting, with real time parent notifications and photo documentation.</p></div>
+            <div class="feature-box"><h3>Digital Enrollment</h3><p>Piles of paperwork are a thing of the past—with field detectors, e-signature, and easy uploads.</p></div>
+            <div class="feature-box"><h3>Intact E-checkin</h3><p>Verify health and drop-off authorization with two clicks.</p></div>
+            <div class="feature-box"><h3>Audit Dashboard</h3><p>Recall records and prepare for audits in 15 seconds or less.</p></div>
+            <div class="feature-box"><h3>Messaging + Photos</h3><p>Timeline flow for center blasts, teacher questions, and art moments.</p></div>
+            <div class="feature-box"><h3>2-Factor Medical</h3><p>SASF system triggers a pulse and sound alert to confirm medication dosage.</p></div>
+            <div class="feature-box"><h3>Classroom Mode</h3><p>Pin-locked classroom mode to protect sensitive admin data.</p></div>
+            <div class="feature-box"><h3>Bank-Level Security</h3><p>Stored securely and encrypted in compliance with state laws.</p></div>
+        </div>
     </div>
 
     <section class="editorial-container" style="background: white; border-top: 4px solid var(--kai-blue);">
         <h2 style="font-family: 'Playfair Display'; font-size: 4rem; margin-top: 40px;">MAKE THE SWITCH!</h2>
         <div class="comp-wrap">
-            <div class="comp-row"><div class="comp-header comp-us">KAI</div><div class="comp-header" style="background:#888;">THEM</div></div>
-            <div class="comp-row"><div class="comp-cell comp-us">$110 / Monthly </div><div class="comp-cell">$200-500 / Monthly </div></div>
-            <div class="comp-row"><div class="comp-cell comp-us">Built By a Mom </div><div class="comp-cell">Built by VCs </div></div>
-            <div class="comp-row"><div class="comp-cell comp-us">3 Strategic Focuses </div><div class="comp-cell">20 Bloated Features </div></div>
-            <div class="comp-row"><div class="comp-cell comp-us">30-Min Setup </div><div class="comp-cell">3-Day Onboarding </div></div>
+            <div class="comp-row"><div class="comp-header comp-us">KAI [cite: 105]</div><div class="comp-header" style="background:#888;">THEM [cite: 119]</div></div>
+            <div class="comp-row"><div class="comp-cell comp-us">$110 / Monthly [cite: 107]</div><div class="comp-cell">$200-500 / Monthly [cite: 122]</div></div>
+            <div class="comp-row"><div class="comp-cell comp-us">Built By a Mom [cite: 106]</div><div class="comp-cell">Built by VCs [cite: 121]</div></div>
+            <div class="comp-row"><div class="comp-cell comp-us">15-Sec Audit Prep [cite: 35]</div><div class="comp-cell">Lost Saturdays [cite: 32]</div></div>
+            <div class="comp-row"><div class="comp-cell comp-us">Real-Time Photos [cite: 61]</div><div class="comp-cell">Paperwork Burials [cite: 21]</div></div>
+            <div class="comp-row"><div class="comp-cell comp-us">30-Min Setup [cite: 115]</div><div class="comp-cell">3-Day Onboarding [cite: 130]</div></div>
+            <div class="comp-row"><div class="comp-cell comp-us">12-Hour Support [cite: 118]</div><div class="comp-cell">3-Day Support Times [cite: 133]</div></div>
         </div>
     </section>
 
+    <div class="ticker-straight">
+        <div class="ticker-text">MEMPHIS-BUILT // MOM-APPROVED // INCLUSIVE TECH // MEMPHIS-BUILT // MOM-APPROVED // INCLUSIVE TECH [cite: 1, 17]</div>
+    </div>
+
     <section class="pledge-section">
         <h2 class="heavy-header">TAKE<span>THE</span><span>PLEDGE</span></h2>
-        <p style="max-width: 600px; margin: 0 auto; font-size: 1.2rem; font-weight: 400; line-height: 1.6;">Join the centers who are choosing people over paperwork. Promise to make the switch.</p>
-        <button id="openModal" class="pledge-btn">I'M IN.</button>
+        <p style="max-width: 600px; margin: 0 auto; font-size: 1.2rem; line-height: 1.6;">Join the centers who are choosing people over paperwork[cite: 37, 38]. Promise to make the switch[cite: 201].</p>
+        <button id="openModal" class="pledge-btn">I'M IN. [cite: 202]</button>
     </section>
 
     <div id="pledgeModal" class="modal">
         <div class="modal-content">
             <h2 style="font-family: 'Fredoka'; color: var(--kai-blue); margin-bottom: 20px;">The KAI Pledge</h2>
             <form id="pledgeForm">
-                <div style="margin-bottom: 15px;">
-                    <label style="display:block; font-weight:700; font-size:0.9rem; margin-bottom:5px;">Center Name</label>
-                    <input type="text" style="width:100%; padding:10px; border-radius:10px; border:2px solid var(--laila-purple);" required>
-                </div>
-                <div style="margin-bottom: 15px;">
-                    <label style="display:block; font-weight:700; font-size:0.9rem; margin-bottom:5px;">Location (City, State)</label>
-                    <input type="text" style="width:100%; padding:10px; border-radius:10px; border:2px solid var(--laila-purple);" required>
-                </div>
-                <div style="margin-bottom: 15px;">
-                    <label style="display:block; font-weight:700; font-size:0.9rem; margin-bottom:5px;">First and Last Name</label>
-                    <input type="text" style="width:100%; padding:10px; border-radius:10px; border:2px solid var(--laila-purple);" required>
-                </div>
-                <div style="margin-bottom: 15px;">
-                    <label style="display:block; font-weight:700; font-size:0.9rem; margin-bottom:5px;">Email Address</label>
-                    <input type="email" style="width:100%; padding:10px; border-radius:10px; border:2px solid var(--laila-purple);" required>
-                </div>
-                <div style="margin-bottom: 15px;">
-                    <label style="display:block; font-weight:700; font-size:0.9rem; margin-bottom:5px;">Phone Number</label>
-                    <input type="tel" style="width:100%; padding:10px; border-radius:10px; border:2px solid var(--laila-purple);" required>
-                </div>
+                <div style="margin-bottom: 15px;"><label style="display:block; font-weight:700; font-size:0.9rem; margin-bottom:5px;">Center Name</label><input type="text" style="width:100%; padding:10px; border-radius:10px; border:2px solid var(--laila-purple);" required></div>
+                <div style="margin-bottom: 15px;"><label style="display:block; font-weight:700; font-size:0.9rem; margin-bottom:5px;">Location (City, State)</label><input type="text" style="width:100%; padding:10px; border-radius:10px; border:2px solid var(--laila-purple);" required></div>
+                <div style="margin-bottom: 15px;"><label style="display:block; font-weight:700; font-size:0.9rem; margin-bottom:5px;">First and Last Name</label><input type="text" style="width:100%; padding:10px; border-radius:10px; border:2px solid var(--laila-purple);" required></div>
+                <div style="margin-bottom: 15px;"><label style="display:block; font-weight:700; font-size:0.9rem; margin-bottom:5px;">Email Address</label><input type="email" style="width:100%; padding:10px; border-radius:10px; border:2px solid var(--laila-purple);" required></div>
+                <div style="margin-bottom: 15px;"><label style="display:block; font-weight:700; font-size:0.9rem; margin-bottom:5px;">Phone Number</label><input type="tel" style="width:100%; padding:10px; border-radius:10px; border:2px solid var(--laila-purple);" required></div>
                 <button type="submit" style="width:100%; background:var(--kai-blue); color:white; padding:15px; border-radius:30px; border:none; font-weight:700;">Sign the Pledge</button>
             </form>
         </div>
@@ -279,7 +256,6 @@
     <script>
         const modal = document.getElementById("pledgeModal");
         const btn = document.getElementById("openModal");
-
         btn.onclick = function() { modal.style.display = "block"; }
         window.onclick = function(event) { if (event.target == modal) { modal.style.display = "none"; } }
         document.getElementById("pledgeForm").onsubmit = function(e) { e.preventDefault(); alert("Thanks for taking the pledge!"); modal.style.display = "none"; }
