@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Let's Work | Image & Co</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Playfair+Display:wght@900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --legacy-ink: #1E1B24;
+            --off-white: #FFFEEC;
+            --lilac: #A88AED;
+            --pear: #CBD83B;
+            --border: 4px solid var(--legacy-ink);
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { background-color: var(--off-white); color: var(--legacy-ink); font-family: 'Inter', sans-serif; text-align: center; }
+
+        nav {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 25px 5%; background: var(--off-white); border-bottom: var(--border);
+            position: sticky; top: 0; z-index: 1000;
+        }
+        .logo { font-family: 'Playfair Display'; font-weight: 900; font-size: 1.8rem; letter-spacing: 2px; }
+        nav .links a { text-decoration: none; color: var(--legacy-ink); margin-left: 20px; font-weight: 700; font-size: 0.8rem; }
+
+        .container { max-width: 600px; margin: 60px auto; padding: 40px; background: white; border: var(--border); border-radius: 40px; box-shadow: 15px 15px 0px var(--pear); text-align: left; }
+        
+        h1 { font-family: 'Playfair Display'; font-size: 3rem; margin-bottom: 30px; line-height: 0.9; text-transform: uppercase; }
+
+        .form-group { margin-bottom: 20px; }
+        label { display: block; font-weight: 700; margin-bottom: 8px; font-size: 0.85rem; text-transform: uppercase; }
+        input, select, textarea { 
+            width: 100%; padding: 12px; border: 2px solid var(--legacy-ink); border-radius: 10px; 
+            font-family: 'Inter', sans-serif; outline: none;
+        }
+        input:focus { border-color: var(--pear); }
+
+        .btn-submit { 
+            width: 100%; background: var(--pear); color: var(--legacy-ink); padding: 18px; 
+            border: none; border-radius: 50px; font-weight: 800; text-transform: uppercase; 
+            cursor: pointer; transition: 0.3s; margin-top: 10px;
+        }
+        .btn-submit:hover { background: var(--legacy-ink); color: white; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">IMAGE & CO</div>
+        <div class="links">
+            <a href="index.html">HOME</a>
+            <a href="services.html">SERVICES</a>
+            <a href="media.html">MEDIA</a>
+            <a href="kai.html">MEET KAI</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1>Let's<br>Work</h1>
+        <form action="https://formspree.io/f/your-id" method="POST">
+            <div class="form-group">
+                <label>Coordinating Service</label>
+                <select name="service" id="service-dropdown" required>
+                    <option value="">Select Service</option>
+                    <option value="positioning-intensive">Brand Story Intensive</option>
+                    <option value="visual-identity">Visual Identity Suite</option>
+                    <option value="launch-suite">Product Launch Suite</option>
+                    <option value="crm-setup">CRM & Client Journey</option>
+                    <option value="software-systems">Software System Design</option>
+                    <option value="full-web-design">Full Website Design</option>
+                    <option value="monthly-retainer">Brand Partnership Retainer</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>First & Last Name</label>
+                <input type="text" name="name" required>
+            </div>
+
+            <div class="form-group">
+                <label>Phone Number</label>
+                <input type="tel" name="phone" required>
+            </div>
+
+            <div class="form-group">
+                <label>Business Name & Industry</label>
+                <input type="text" name="business" placeholder="e.g. Image & Co | Tech" required>
+            </div>
+
+            <div class="form-group">
+                <label>Project Details</label>
+                <textarea name="details" rows="4" placeholder="Tell us about the bottleneck..." required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label>Links (Optional)</label>
+                <input type="url" name="instagram" placeholder="Instagram URL" style="margin-bottom: 10px;">
+                <input type="url" name="facebook" placeholder="Facebook URL" style="margin-bottom: 10px;">
+                <input type="url" name="website" placeholder="Current Website URL">
+            </div>
+
+            <button type="submit" class="btn-submit">Submit Inquiry</button>
+        </form>
+    </div>
+
+    <script>
+        // Logic to pre-load the service from the URL
+        const params = new URLSearchParams(window.location.search);
+        const selectedService = params.get('service');
+        if (selectedService) {
+            document.getElementById('service-dropdown').value = selectedService;
+        }
+    </script>
+</body>
+</html>
