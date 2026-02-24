@@ -57,7 +57,7 @@
 
         .signature {
             font-family: 'Birthstone', cursive;
-            font-size: 4.5rem;
+            font-size: 3.2rem; /* Reduced for better proportion */
             color: var(--kai-blue);
             margin-top: 20px;
             display: block;
@@ -72,6 +72,14 @@
         }
         .nav-logo { font-family: 'Playfair Display', serif; font-weight: 900; font-size: 1.8rem; }
         nav .links a { text-decoration: none; color: var(--kai-blue); margin-left: 20px; font-weight: 700; font-size: 0.85rem; }
+
+        /* --- Banner Header (Updated Colors) --- */
+        .kai-banner { 
+            background: var(--kai-blue); 
+            color: var(--eggshell); 
+            padding: 50px 0; 
+            border-bottom: 4px solid var(--kayson-blue); 
+        }
 
         /* --- Organic Shape (Spanish Class Vibe) --- */
         .organic-transition {
@@ -146,6 +154,7 @@
         .pledge-btn { background: var(--eggshell); color: var(--kai-blue); padding: 25px 80px; border-radius: 100px; border: none; font-weight: 800; font-size: 1.4rem; cursor: pointer; transition: 0.3s; margin-top: 40px; }
         .pledge-btn:hover { background: var(--kayson-blue); color: white; }
 
+        /* --- Modal --- */
         .modal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0, 4, 170, 0.6); backdrop-filter: blur(8px); }
         .modal-content { background: var(--eggshell); margin: 5% auto; padding: 40px; border-radius: 40px; width: 90%; max-width: 500px; border: 4px solid var(--kai-blue); color: var(--kai-blue); text-align: left; }
 
@@ -166,7 +175,7 @@
 
     <div class="kai-banner">
         <h1 class="heavy-header" style="font-size: 5rem;">MEET<span>KAI</span></h1>
-        <div class="acronym-sub">Keeping All Intact [cite: 16]</div>
+        <div class="acronym-sub">Keeping All Intact</div>
     </div>
 
     <section class="editorial-container">
@@ -175,18 +184,18 @@
 
         <h1 class="heavy-header">AT<span>THE</span><span>HEART</span></h1>
         <div style="max-width: 700px; margin: 0 auto; font-size: 1.2rem; line-height: 1.8; position: relative;">
-            <p>The inspiration for KAI came from the same place most of greatest achievements have—from a conversation with my 4 year old son, Kai[cite: 12]. We were sitting in the office of his speech therapist filling out a stack of papers, in an attempt to get another stack of paper for our upcoming daycare tours[cite: 12]. Kai has Autism and Type 1 Diabetes, both of which he handles with such a gentle spirit and sometimes force him to exercise his patience—a patience that has never extended to his curiosity[cite: 12].</p>
+            <p>The inspiration for KAI came from the same place most of greatest achievements have—from a conversation with my 4 year old son, Kai. We were sitting in the office of his speech therapist filling out a stack of papers, in an attempt to get another stack of paper for our upcoming daycare tours. Kai has Autism and Type 1 Diabetes, both of which he handles with such a gentle spirit and sometimes force him to exercise his patience—a patience that has never extended to his curiosity.</p>
             <br>
-            <p>For families like mine life is so riddled by paperwork it really does feel like a second job sometimes[cite: 12]. KAI is a love letter to families and center owners/directors alike because it's designed with you both in mind[cite: 12]. I'm not a silicon valley tech startup, I'm a mom and entrepreneur who built an app for moms and entrepreneurs alike[cite: 12].</p>
-            <span class="signature">Kayla, Image & Co Founder [cite: 12]</span>
+            <p>For families like mine life is so riddled by paperwork it really does feel like a second job sometimes. KAI is a love letter to families and center owners/directors alike because it's designed with you both in mind. I'm not a silicon valley tech startup, I'm a mom and entrepreneur who built an app for moms and entrepreneurs alike.</p>
+            <span class="signature">Kayla, Image & Co Founder</span>
         </div>
     </section>
 
     <section class="organic-transition">
         <div class="massive-price-card">
-            <span class="price-label">Keep All Intact [cite: 16]</span>
+            <span class="price-label">Keep All Intact</span>
             <h2 class="massive-price">$110</h2>
-            <p style="font-weight: 800; font-size: 1.5rem; text-transform: uppercase;">For People, Payments, & Paperwork [cite: 19]</p>
+            <p style="font-weight: 800; font-size: 1.5rem; text-transform: uppercase;">For People, Payments, & Paperwork</p>
             <p style="margin-top: 15px; opacity: 0.7; font-weight: 700;">UNLIMITED ACCESS. NO HIDDEN FEES.</p>
         </div>
     </section>
@@ -196,7 +205,7 @@
             <div class="feature-box"><h3>Ouch Log</h3><p>Streamlined incident reporting, with real time parent notifications and photo documentation.</p></div>
             <div class="feature-box"><h3>Digital Enrollment</h3><p>Piles of paperwork are a thing of the past—with field detectors, e-signature, and easy uploads.</p></div>
             <div class="feature-box"><h3>Intact E-checkin</h3><p>Verify health and drop-off authorization with two clicks.</p></div>
-            <div class="feature-box"><h3>Audit Dashboard</h3><p>Recall records and prepare for audits in 15 seconds or less.</p></div>
+            <div class="feature-box"><h3>Audit Dashboard</h3><p>Prepare for audits and recall records in 15 seconds or less.</p></div>
             <div class="feature-box"><h3>Messaging + Photos</h3><p>Timeline flow for center blasts, teacher questions, and art moments.</p></div>
             <div class="feature-box"><h3>2-Factor Medical</h3><p>SASF system triggers a pulse and sound alert to confirm medication dosage.</p></div>
             <div class="feature-box"><h3>Classroom Mode</h3><p>Pin-locked classroom mode to protect sensitive admin data.</p></div>
@@ -204,7 +213,7 @@
             <div class="feature-box"><h3>Ouch Log</h3><p>Streamlined incident reporting, with real time parent notifications and photo documentation.</p></div>
             <div class="feature-box"><h3>Digital Enrollment</h3><p>Piles of paperwork are a thing of the past—with field detectors, e-signature, and easy uploads.</p></div>
             <div class="feature-box"><h3>Intact E-checkin</h3><p>Verify health and drop-off authorization with two clicks.</p></div>
-            <div class="feature-box"><h3>Audit Dashboard</h3><p>Recall records and prepare for audits in 15 seconds or less.</p></div>
+            <div class="feature-box"><h3>Audit Dashboard</h3><p>Prepare for audits and recall records in 15 seconds or less.</p></div>
             <div class="feature-box"><h3>Messaging + Photos</h3><p>Timeline flow for center blasts, teacher questions, and art moments.</p></div>
             <div class="feature-box"><h3>2-Factor Medical</h3><p>SASF system triggers a pulse and sound alert to confirm medication dosage.</p></div>
             <div class="feature-box"><h3>Classroom Mode</h3><p>Pin-locked classroom mode to protect sensitive admin data.</p></div>
@@ -215,24 +224,24 @@
     <section class="editorial-container" style="background: white; border-top: 4px solid var(--kai-blue);">
         <h2 style="font-family: 'Playfair Display'; font-size: 4rem; margin-top: 40px;">MAKE THE SWITCH!</h2>
         <div class="comp-wrap">
-            <div class="comp-row"><div class="comp-header comp-us">KAI [cite: 105]</div><div class="comp-header" style="background:#888;">THEM [cite: 119]</div></div>
-            <div class="comp-row"><div class="comp-cell comp-us">$110 / Monthly [cite: 107]</div><div class="comp-cell">$200-500 / Monthly [cite: 122]</div></div>
-            <div class="comp-row"><div class="comp-cell comp-us">Built By a Mom [cite: 106]</div><div class="comp-cell">Built by VCs [cite: 121]</div></div>
-            <div class="comp-row"><div class="comp-cell comp-us">15-Sec Audit Prep [cite: 35]</div><div class="comp-cell">Lost Saturdays [cite: 32]</div></div>
-            <div class="comp-row"><div class="comp-cell comp-us">Real-Time Photos [cite: 61]</div><div class="comp-cell">Paperwork Burials [cite: 21]</div></div>
-            <div class="comp-row"><div class="comp-cell comp-us">30-Min Setup [cite: 115]</div><div class="comp-cell">3-Day Onboarding [cite: 130]</div></div>
-            <div class="comp-row"><div class="comp-cell comp-us">12-Hour Support [cite: 118]</div><div class="comp-cell">3-Day Support Times [cite: 133]</div></div>
+            <div class="comp-row"><div class="comp-header comp-us">KAI</div><div class="comp-header" style="background:#888;">THEM</div></div>
+            <div class="comp-row"><div class="comp-cell comp-us">$110 / Monthly</div><div class="comp-cell">$200-500 / Monthly</div></div>
+            <div class="comp-row"><div class="comp-cell comp-us">Built By a Mom</div><div class="comp-cell">Built by VCs</div></div>
+            <div class="comp-row"><div class="comp-cell comp-us">15-Sec Audit Prep</div><div class="comp-cell">Lost Saturdays</div></div>
+            <div class="comp-row"><div class="comp-cell comp-us">Real-Time Photos</div><div class="comp-cell">Paperwork Burials</div></div>
+            <div class="comp-row"><div class="comp-cell comp-us">30-Min Setup</div><div class="comp-cell">3-Day Onboarding</div></div>
+            <div class="comp-row"><div class="comp-cell comp-us">12-Hour Support</div><div class="comp-cell">3-Day Support Times</div></div>
         </div>
     </section>
 
     <div class="ticker-straight">
-        <div class="ticker-text">MEMPHIS-BUILT // MOM-APPROVED // INCLUSIVE TECH // MEMPHIS-BUILT // MOM-APPROVED // INCLUSIVE TECH [cite: 1, 17]</div>
+        <div class="ticker-text">MEMPHIS-BUILT // MOM-APPROVED // INCLUSIVE TECH // MEMPHIS-BUILT // MOM-APPROVED // INCLUSIVE TECH</div>
     </div>
 
     <section class="pledge-section">
         <h2 class="heavy-header">TAKE<span>THE</span><span>PLEDGE</span></h2>
-        <p style="max-width: 600px; margin: 0 auto; font-size: 1.2rem; line-height: 1.6;">Join the centers who are choosing people over paperwork[cite: 37, 38]. Promise to make the switch[cite: 201].</p>
-        <button id="openModal" class="pledge-btn">I'M IN. [cite: 202]</button>
+        <p style="max-width: 600px; margin: 0 auto; font-size: 1.2rem; line-height: 1.6;">Join the centers who are choosing people over paperwork. Promise to make the switch.</p>
+        <button id="openModal" class="pledge-btn">I'M IN.</button>
     </section>
 
     <div id="pledgeModal" class="modal">
@@ -250,7 +259,7 @@
     </div>
 
     <footer>
-        <p>© 2026, Image and Company [cite: 12, 18]</p>
+        <p>© 2026, Image and Company</p>
     </footer>
 
     <script>
