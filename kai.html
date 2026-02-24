@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MEET KAI | Keeping All Intact</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@900&family=Fredoka:wght@400;600&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@900&family=Fredoka:wght@400;600&family=Inter:wght@400;700&family=Birthstone&display=swap" rel="stylesheet">
     <style>
         :root {
             --kai-blue: #0004AA;
@@ -20,91 +20,144 @@
             font-family: 'Inter', sans-serif;
             text-align: center;
             overflow-x: hidden;
+            /* Subtle paper texture */
+            background-image: url('https://www.transparenttextures.com/patterns/paper-fibers.png');
         }
 
-        /* --- Floating Doodles Animation --- */
-        .doodle { position: absolute; z-index: -1; opacity: 0.6; animation: float 5s ease-in-out infinite; }
-        @keyframes float {
-            0%, 100% { transform: translateY(0) rotate(0deg); }
-            50% { transform: translateY(-10px) rotate(5deg); }
+        /* --- Massive Floating Doodles (Centered in At The Heart) --- */
+        .editorial-container { position: relative; padding: 80px 8%; z-index: 1; }
+        .massive-doodle { 
+            position: absolute; 
+            z-index: -1; 
+            opacity: 0.15; 
+            animation: slowFloat 8s ease-in-out infinite; 
+        }
+        @keyframes slowFloat {
+            0%, 100% { transform: translateY(0) rotate(0deg) scale(1); }
+            50% { transform: translateY(-30px) rotate(10deg) scale(1.1); }
         }
 
-        /* --- Tightened Typography --- */
+        /* --- Typography --- */
         .heavy-header {
             font-family: 'Playfair Display', serif;
-            font-size: clamp(3rem, 10vw, 6rem);
-            line-height: 0.85;
+            font-size: clamp(4rem, 15vw, 10rem);
+            line-height: 0.8;
             text-transform: uppercase;
-            margin-bottom: 20px;
+            margin-bottom: 30px;
         }
         .heavy-header span { display: block; }
+        
+        .signature {
+            font-family: 'Birthstone', cursive;
+            font-size: 4rem;
+            color: var(--kai-blue);
+            margin-top: 20px;
+            display: block;
+        }
 
         /* --- Navigation --- */
         nav {
             display: flex; justify-content: space-between; align-items: center;
-            padding: 15px 5%; background: var(--eggshell); border-bottom: 4px solid var(--kai-blue);
+            padding: 20px 5%; background: var(--eggshell); border-bottom: 4px solid var(--kai-blue);
             position: sticky; top: 0; z-index: 1000;
         }
         .nav-logo { font-family: 'Playfair Display', serif; font-weight: 900; font-size: 1.8rem; }
-        nav .links a { text-decoration: none; color: var(--kai-blue); margin-left: 20px; font-weight: 700; font-size: 0.8rem; }
+        nav .links a { text-decoration: none; color: var(--kai-blue); margin-left: 20px; font-weight: 700; font-size: 0.85rem; }
 
-        /* --- Sections with Tight Padding --- */
-        .kai-banner { background: var(--kai-blue); color: var(--eggshell); padding: 20px 0; border-bottom: 4px solid var(--kayson-blue); }
-        .editorial-container { padding: 40px 8%; position: relative; max-width: 1000px; margin: 0 auto; }
-        
-        /* --- Features Flex Layout --- */
-        .feature-grid { 
-            display: flex; 
-            flex-wrap: wrap; 
-            justify-content: center; 
-            gap: 20px; 
-            padding: 20px 5%; 
+        /* --- Banner --- */
+        .kai-banner { background: var(--kai-blue); color: var(--eggshell); padding: 40px 0; border-bottom: 4px solid var(--kayson-blue); }
+
+        /* --- Automatic Feature Carousel --- */
+        .carousel-outer {
+            background: white;
+            border-top: 4px solid var(--kai-blue);
+            border-bottom: 4px solid var(--kai-blue);
+            padding: 40px 0;
+            overflow: hidden;
+            width: 100%;
+        }
+        .carousel-track {
+            display: flex;
+            width: calc(340px * 16);
+            animation: autoScroll 40s linear infinite;
         }
         .feature-box {
-            background: white; 
-            padding: 25px; 
-            border-radius: 35px; 
+            width: 320px;
+            margin: 0 10px;
+            background: var(--eggshell);
+            padding: 30px;
+            border-radius: 35px;
             border: 4px solid var(--kai-blue);
             box-shadow: 10px 10px 0px var(--laila-purple);
-            flex: 1 1 280px;
-            max-width: 340px;
+            flex-shrink: 0;
             text-align: center;
-            transition: 0.3s;
         }
-        .feature-box:hover { transform: translate(-5px, -5px); box-shadow: 15px 15px 0px var(--kayson-blue); }
-        .feature-box h3 { font-family: 'Fredoka', sans-serif; margin-bottom: 10px; font-size: 1.3rem; color: var(--kayson-blue); }
-        .feature-box p { font-size: 0.9rem; line-height: 1.4; }
+        .feature-box h3 { font-family: 'Fredoka', sans-serif; margin-bottom: 10px; font-size: 1.2rem; color: var(--kayson-blue); }
+        .feature-box p { font-size: 0.85rem; line-height: 1.4; }
+        
+        @keyframes autoScroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(calc(-340px * 8)); }
+        }
+
+        /* --- High Impact Pricing Card --- */
+        .pricing-section {
+            padding: 120px 5%;
+            background: white;
+            border-top: 4px solid var(--kai-blue);
+        }
+        .massive-price-card {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 80px 20px;
+        }
+        .price-label { text-transform: uppercase; font-weight: 800; letter-spacing: 5px; font-size: 1.2rem; margin-bottom: 10px; display: block;}
+        .massive-price {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(6rem, 25vw, 15rem);
+            line-height: 0.9;
+            color: var(--kai-blue);
+            margin: 20px 0;
+        }
 
         /* --- Comparison Table --- */
-        .comp-wrap { margin: 30px auto; border-radius: 30px; overflow: hidden; border: 4px solid var(--kai-blue); max-width: 800px; }
-        .comp-row { display: grid; grid-template-columns: 1fr 1fr; background: white; }
-        .comp-cell { padding: 15px; border-bottom: 2px solid var(--eggshell); display: flex; align-items: center; justify-content: center; font-size: 0.95rem; }
+        .comp-wrap { margin: 60px auto; border-radius: 30px; overflow: hidden; border: 4px solid var(--kai-blue); max-width: 800px; background: white; }
+        .comp-row { display: grid; grid-template-columns: 1fr 1fr; }
+        .comp-cell { padding: 20px; border-bottom: 2px solid var(--eggshell); display: flex; align-items: center; justify-content: center; font-size: 0.95rem; }
         .comp-us { background: #fdf6ff; border-right: 4px solid var(--kai-blue); font-weight: 700; }
-        .comp-header { background: var(--kai-blue); color: white; padding: 15px; font-weight: 800; font-size: 1.1rem; }
+        .comp-header { background: var(--kai-blue); color: white; padding: 20px; font-weight: 800; font-size: 1.1rem; }
 
-        /* --- Straight Ticker --- */
-        .ticker-straight { 
-            background: var(--kayson-blue); 
-            padding: 20px 0; 
-            border-top: 4px solid var(--kai-blue); 
-            border-bottom: 4px solid var(--kai-blue); 
-            margin: 40px 0; 
-            overflow: hidden; 
-        }
+        /* --- Ticker --- */
+        .ticker-straight { background: var(--kayson-blue); padding: 20px 0; border-top: 4px solid var(--kai-blue); border-bottom: 4px solid var(--kai-blue); overflow: hidden; }
         .ticker-text { display: inline-block; white-space: nowrap; font-family: 'Fredoka'; font-size: 1.5rem; color: white; animation: scroll 30s linear infinite; }
 
-        /* --- Pricing Card --- */
-        .price-card {
-            background: white; border: 4px solid var(--kai-blue); border-radius: 50px;
-            max-width: 400px; margin: 40px auto; padding: 40px; box-shadow: 15px 15px 0px var(--kayson-blue);
+        /* --- High Contrast Pledge --- */
+        .pledge-section {
+            background: var(--kai-blue);
+            color: var(--eggshell);
+            padding: 120px 10%;
+            border-top: 4px solid var(--kayson-blue);
         }
-        .price-card h2 { font-family: 'Playfair Display'; font-size: 4.5rem; line-height: 1; }
+        .pledge-section .heavy-header { color: var(--eggshell); }
+        .pledge-btn {
+            background: var(--eggshell);
+            color: var(--kai-blue);
+            padding: 25px 80px;
+            border-radius: 100px;
+            border: none;
+            font-weight: 800;
+            font-size: 1.4rem;
+            cursor: pointer;
+            transition: 0.3s;
+            margin-top: 40px;
+        }
+        .pledge-btn:hover { transform: scale(1.05); background: var(--kayson-blue); color: white; }
 
         /* --- Modal --- */
-        .modal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0, 4, 170, 0.4); backdrop-filter: blur(5px); }
+        .modal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0, 4, 170, 0.6); backdrop-filter: blur(8px); }
         .modal-content { background: var(--eggshell); margin: 5% auto; padding: 40px; border-radius: 40px; width: 90%; max-width: 500px; border: 4px solid var(--kai-blue); text-align: left; }
 
-        footer { padding: 40px; border-top: 4px solid var(--kai-blue); margin-top: 40px; font-size: 0.85rem; }
+        footer { padding: 40px; background: var(--eggshell); border-top: 4px solid var(--kai-blue); color: var(--kai-blue); font-weight: 700; }
 
         @keyframes scroll { 0% { transform: translateX(100%); } 100% { transform: translateX(-100%); } }
     </style>
@@ -122,59 +175,72 @@
     </nav>
 
     <div class="kai-banner">
-        <h1 class="heavy-header" style="font-size: 4rem;">MEET<span>KAI</span></h1>
+        <h1 class="heavy-header" style="font-size: 5rem;">MEET<span>KAI</span></h1>
     </div>
 
     <section class="editorial-container">
-        <svg class="doodle" style="top:5%; left:2%; width:40px;" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" stroke="var(--laila-purple)" stroke-width="10" fill="none"/></svg>
-        <svg class="doodle" style="bottom:10%; right:5%; width:45px;" viewBox="0 0 100 100"><path d="M20 20 L80 80 M80 20 L20 80" stroke="var(--kayson-blue)" stroke-width="10"/></svg>
+        <svg class="massive-doodle" style="top:-10%; left:-10%; width:300px;" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" stroke="var(--laila-purple)" stroke-width="2" fill="none"/></svg>
+        <svg class="massive-doodle" style="bottom:0; right:-5%; width:350px; animation-delay: -4s;" viewBox="0 0 100 100"><path d="M20 20 L80 80 M80 20 L20 80" stroke="var(--kayson-blue)" stroke-width="2"/></svg>
+        <svg class="massive-doodle" style="top:20%; right:5%; width:150px; opacity:0.1;" viewBox="0 0 100 100"><rect x="20" y="20" width="60" height="60" stroke="var(--kai-blue)" stroke-width="2" fill="none"/></svg>
 
         <h1 class="heavy-header">AT<span>THE</span><span>HEART</span></h1>
-        <div style="max-width: 800px; margin: 0 auto; font-size: 1.1rem; line-height: 1.6;">
+        <div style="max-width: 800px; margin: 0 auto; font-size: 1.2rem; line-height: 1.8; position: relative;">
             <p>The inspiration for KAI came from the same place most of greatest achievements have—from a conversation with my 4 year old son, Kai. We were sitting in the office of his speech therapist filling out a stack of papers, in an attempt to get another stack of paper for our upcoming daycare tours. Kai has Autism and Type 1 Diabetes, both of which he handles with such a gentle spirit and sometimes force him to exercise his patience—a patience that has never extended to his curiosity.</p>
             <br>
             <p>For families like mine life is so riddled by paperwork it really does feel like a second job sometimes. KAI is a love letter to families and center owners/directors alike because it's designed with you both in mind. I'm not a silicon valley tech startup, I'm a mom and entrepreneur who built an app for moms and entrepreneurs alike.</p>
-            <p style="margin-top: 15px; font-weight: 700;">Kayla, Image & Co Founder</p>
+            <span class="signature">Kayla, Image & Co Founder </span>
         </div>
     </section>
 
-    <h2 style="font-family: 'Playfair Display'; font-size: 3rem; margin: 40px 0 20px;">KEY FEATURES</h2>
-    <section class="feature-grid">
-        <div class="feature-box"><h3>Ouch Log</h3><p>Streamlined incident reporting, with real time parent notifications and photo documentation.</p></div>
-        <div class="feature-box"><h3>Digital Enrollment</h3><p>Piles of paperwork are a thing of the past—with field detectors, e-signature capabilities, and easy document uploads.</p></div>
-        <div class="feature-box"><h3>Intact E-checkin</h3><p>Parents can ensure that their kids are in good health and have been dropped off/picked up by authorized persons with two clicks.</p></div>
-        <div class="feature-box"><h3>Audit Dashboard</h3><p>Center personnel can quickly prepare for audits and recall records easily, with customizable toggles and parameters you'll have a downloaded file ready for print and review in 15 seconds or less.</p></div>
-        <div class="feature-box"><h3>Messaging + Photos</h3><p>Whether it's a center wide blast, quick question for a teacher, or just a photo of a young art prodigy's latest creation, you can do it all.</p></div>
-        <div class="feature-box"><h3>2-Factor Medical</h3><p>Named SASF (Special Alerts for Special Friends), this system triggers a pulse and sound alert to confirm medication dosage or session start.</p></div>
-        <div class="feature-box"><h3>Classroom Mode</h3><p>Lock designated devices into classroom mode; no sensitive information is available without your pin to switch into admin mode.</p></div>
-        <div class="feature-box"><h3>Bank-Level Security</h3><p>In compliance with state laws children's records are deleted within 3-7 years, while we do store records we can ensure that all data is stored securely and encrypted.</p></div>
+    <div class="carousel-outer">
+        <div class="carousel-track">
+            <div class="feature-box"><h3>Ouch Log</h3><p>Streamlined incident reporting, with real time parent notifications and photo documentation.</p></div>
+            <div class="feature-box"><h3>Digital Enrollment</h3><p>Piles of paperwork are a thing of the past—with field detectors, e-signature, and easy uploads.</p></div>
+            <div class="feature-box"><h3>Intact E-checkin</h3><p>Verify health and drop-off authorization with two clicks.</p></div>
+            <div class="feature-box"><h3>Audit Dashboard</h3><p>Prepare for audits and recall records in 15 seconds or less.</p></div>
+            <div class="feature-box"><h3>Messaging + Photos</h3><p>Timeline flow for center blasts, teacher questions, and art moments.</p></div>
+            <div class="feature-box"><h3>2-Factor Medical</h3><p>SASF system triggers a pulse and sound alert to confirm medication dosage.</p></div>
+            <div class="feature-box"><h3>Classroom Mode</h3><p>Pin-locked classroom mode to protect sensitive admin data.</p></div>
+            <div class="feature-box"><h3>Bank-Level Security</h3><p>Stored securely and encrypted in compliance with state laws.</p></div>
+            <div class="feature-box"><h3>Ouch Log</h3><p>Streamlined incident reporting, with real time parent notifications and photo documentation.</p></div>
+            <div class="feature-box"><h3>Digital Enrollment</h3><p>Piles of paperwork are a thing of the past—with field detectors, e-signature, and easy uploads.</p></div>
+            <div class="feature-box"><h3>Intact E-checkin</h3><p>Verify health and drop-off authorization with two clicks.</p></div>
+            <div class="feature-box"><h3>Audit Dashboard</h3><p>Prepare for audits and recall records in 15 seconds or less.</p></div>
+            <div class="feature-box"><h3>Messaging + Photos</h3><p>Timeline flow for center blasts, teacher questions, and art moments.</p></div>
+            <div class="feature-box"><h3>2-Factor Medical</h3><p>SASF system triggers a pulse and sound alert to confirm medication dosage.</p></div>
+            <div class="feature-box"><h3>Classroom Mode</h3><p>Pin-locked classroom mode to protect sensitive admin data.</p></div>
+            <div class="feature-box"><h3>Bank-Level Security</h3><p>Stored securely and encrypted in compliance with state laws.</p></div>
+        </div>
+    </div>
+
+    <section class="pricing-section">
+        <div class="massive-price-card">
+            <span class="price-label">Keep All Intact [cite: 16]</span>
+            <h2 class="massive-price">$110</h2>
+            <p style="font-weight: 800; font-size: 1.5rem; text-transform: uppercase;">For People, Payments, & Paperwork [cite: 19]</p>
+            <p style="margin-top: 15px; opacity: 0.7; font-weight: 700;">UNLIMITED ACCESS. NO HIDDEN FEES.</p>
+        </div>
     </section>
 
     <div class="ticker-straight">
         <div class="ticker-text">MEMPHIS-BUILT // MOM-APPROVED // INCLUSIVE TECH // MEMPHIS-BUILT // MOM-APPROVED // INCLUSIVE TECH</div>
     </div>
 
-    <section class="editorial-container">
-        <h2 style="font-family: 'Playfair Display'; font-size: 4rem; margin-bottom: 20px;">MAKE THE SWITCH!</h2>
+    <section class="editorial-container" style="background: white; border-top: 4px solid var(--kai-blue);">
+        <h2 style="font-family: 'Playfair Display'; font-size: 4rem; margin-top: 40px;">MAKE THE SWITCH!</h2>
         <div class="comp-wrap">
             <div class="comp-row"><div class="comp-header comp-us">KAI</div><div class="comp-header" style="background:#888;">THEM</div></div>
-            <div class="comp-row"><div class="comp-cell comp-us">$110 / Monthly</div><div class="comp-cell">$200-500 / Monthly</div></div>
-            <div class="comp-row"><div class="comp-cell comp-us">Built By a Mom</div><div class="comp-cell">Built by VCs</div></div>
-            <div class="comp-row"><div class="comp-cell comp-us">3 Strategic Focuses</div><div class="comp-cell">20 Bloated Features</div></div>
-            <div class="comp-row"><div class="comp-cell comp-us">30-Min Setup</div><div class="comp-cell">3-Day Onboarding</div></div>
+            <div class="comp-row"><div class="comp-cell comp-us">$110 / Monthly </div><div class="comp-cell">$200-500 / Monthly </div></div>
+            <div class="comp-row"><div class="comp-cell comp-us">Built By a Mom </div><div class="comp-cell">Built by VCs </div></div>
+            <div class="comp-row"><div class="comp-cell comp-us">3 Strategic Focuses </div><div class="comp-cell">20 Bloated Features </div></div>
+            <div class="comp-row"><div class="comp-cell comp-us">30-Min Setup </div><div class="comp-cell">3-Day Onboarding </div></div>
         </div>
     </section>
 
-    <div class="price-card">
-        <p style="text-transform: uppercase; font-weight: 800; letter-spacing: 2px; font-size: 0.8rem;">Keep All Intact</p>
-        <h2 style="font-family: 'Playfair Display'; font-size: 4rem; line-height: 1;">$110</h2>
-        <p style="margin-top: 10px; font-weight: 700; font-size: 0.9rem;">FOR PEOPLE, PAYMENTS, & PAPERWORK</p>
-        <p style="font-size: 0.75rem; margin-top: 5px; opacity: 0.7;">UNLIMITED ACCESS. NO HIDDEN FEES.</p>
-    </div>
-
-    <section style="padding: 40px 0;">
-        <h2 class="heavy-header" style="font-size: 3.5rem;">TAKE<span>THE</span><span>PLEDGE</span></h2>
-        <button id="openModal" style="background: var(--kai-blue); color: white; padding: 20px 50px; border-radius: 100px; border: none; font-weight: 800; font-size: 1.1rem; cursor: pointer;">I'M IN.</button>
+    <section class="pledge-section">
+        <h2 class="heavy-header">TAKE<span>THE</span><span>PLEDGE</span></h2>
+        <p style="max-width: 600px; margin: 0 auto; font-size: 1.2rem; font-weight: 400; line-height: 1.6;">Join the centers who are choosing people over paperwork. Promise to make the switch.</p>
+        <button id="openModal" class="pledge-btn">I'M IN.</button>
     </section>
 
     <div id="pledgeModal" class="modal">
@@ -207,7 +273,7 @@
     </div>
 
     <footer>
-        <p>© 2026, Image and Company</p>
+        <p>© 2026, Image and Company [cite: 12, 18]</p>
     </footer>
 
     <script>
