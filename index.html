@@ -29,17 +29,7 @@
         h1, h2, h3 { font-family: 'Playfair Display', serif; text-align: center; }
 
         /* --- Navigation --- */
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 25px 5%;
-            background: var(--off-white);
-            border-bottom: var(--border-style);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
+       <div id="nav-placeholder"></div>
 
         .logo { font-weight: 700; letter-spacing: 3px; font-size: 1.1rem; text-transform: uppercase; }
 
@@ -295,5 +285,25 @@
         <a href="kai.html" class="kai-cta">See What's Coming</a>
     </section>
 
+    <script>
+    // 1. Fetch the nav.html file
+    fetch('nav.html')
+        .then(response => response.text())
+        .then(data => {
+            // 2. Inject it into the placeholder
+            document.getElementById('nav-placeholder').innerHTML = data;
+
+            // 3. Initialize the Hamburger Logic AFTER it is injected
+            const hamburger = document.getElementById('hamburger');
+            const navLinks = document.getElementById('nav-links');
+
+            if (hamburger) {
+                hamburger.addEventListener('click', () => {
+                    navLinks.classList.toggle('active');
+                });
+            }
+        })
+        .catch(err => console.warn('Navigation failed to load:', err));
+</script>
 </body>
 </html>
