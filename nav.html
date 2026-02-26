@@ -4,9 +4,9 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 15px 5%;
-        background: var(--eggshell);
-        border-bottom: 4px solid var(--kai-blue);
+        padding: 25px 5%;
+        background: var(--off-white);
+        border-bottom: var(--border);
         position: sticky;
         top: 0;
         z-index: 1000;
@@ -14,9 +14,10 @@
 
     .nav-logo {
         font-family: 'Playfair Display', serif;
-        font-weight: 900;
-        font-size: 1.8rem;
-        color: var(--kai-blue);
+        font-weight: 700;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        color: var(--legacy-ink);
         text-decoration: none;
     }
 
@@ -28,10 +29,15 @@
 
     .nav-links a {
         text-decoration: none;
-        color: var(--kai-blue);
+        color: var(--legacy-ink);
         font-weight: 700;
         font-size: 0.85rem;
         transition: 0.3s;
+    }
+
+    /* Target the specific KAI link with your Pear variable */
+    .kai-nav {
+        color: var(--pear) !important;
     }
 
     .hamburger {
@@ -44,7 +50,7 @@
     .hamburger div {
         width: 25px;
         height: 3px;
-        background-color: var(--kai-blue);
+        background-color: var(--legacy-ink);
         transition: 0.3s;
     }
 
@@ -56,12 +62,12 @@
             display: none; /* Hidden until toggled */
             flex-direction: column;
             position: absolute;
-            top: 70px; /* Adjust based on nav height */
+            top: 85px; /* Aligns with your 25px padding */
             left: 0;
             width: 100%;
-            background: var(--eggshell);
+            background: var(--off-white);
             padding: 30px 0;
-            border-bottom: 4px solid var(--kai-blue);
+            border-bottom: var(--border);
             gap: 20px;
         }
 
@@ -73,6 +79,7 @@
             width: 100%;
             text-align: center;
             font-size: 1.1rem;
+            margin-left: 0;
         }
     }
 </style>
@@ -90,6 +97,6 @@
         <a href="index.html">HOME</a>
         <a href="services.html">SERVICES</a>
         <a href="media.html">MEDIA</a>
-        <a href="kai.html" style="color: var(--kayson-blue); font-weight: 900;">MEET KAI</a>
+        <a href="kai.html" class="kai-nav">MEET KAI</a>
     </div>
 </nav>
