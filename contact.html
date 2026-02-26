@@ -17,8 +17,6 @@
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body { background-color: var(--off-white); color: var(--legacy-ink); font-family: 'Inter', sans-serif; text-align: center; }
 
-        <div id="nav-placeholder"></div>
-        
         .container { max-width: 600px; margin: 60px auto; padding: 40px; background: white; border: var(--border); border-radius: 40px; box-shadow: 15px 15px 0px var(--pear); text-align: left; }
         
         h1 { font-family: 'Playfair Display'; font-size: 3rem; margin-bottom: 30px; line-height: 0.9; text-transform: uppercase; }
@@ -41,15 +39,7 @@
 </head>
 <body>
 
-    <nav>
-        <div class="logo">IMAGE & CO</div>
-        <div class="links">
-            <a href="index.html">HOME</a>
-            <a href="services.html">SERVICES</a>
-            <a href="media.html">MEDIA</a>
-            <a href="kai.html">MEET KAI</a>
-        </div>
-    </nav>
+    <div id="nav-placeholder"></div>
 
     <div class="container">
         <h1>Let's<br>Work</h1>
@@ -100,32 +90,29 @@
     </div>
 
     <script>
-        // Logic to pre-load the service from the URL
         const params = new URLSearchParams(window.location.search);
         const selectedService = params.get('service');
         if (selectedService) {
             document.getElementById('service-dropdown').value = selectedService;
         }
     </script>
+
     <script>
-    // 1. Fetch the nav.html file
-    fetch('nav.html')
-        .then(response => response.text())
-        .then(data => {
-            // 2. Inject it into the placeholder
-            document.getElementById('nav-placeholder').innerHTML = data;
+        fetch('nav.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('nav-placeholder').innerHTML = data;
 
-            // 3. Initialize the Hamburger Logic AFTER it is injected
-            const hamburger = document.getElementById('hamburger');
-            const navLinks = document.getElementById('nav-links');
+                const hamburger = document.getElementById('hamburger');
+                const navLinks = document.getElementById('nav-links');
 
-            if (hamburger) {
-                hamburger.addEventListener('click', () => {
-                    navLinks.classList.toggle('active');
-                });
-            }
-        })
-        .catch(err => console.warn('Navigation failed to load:', err));
-</script>
+                if (hamburger) {
+                    hamburger.addEventListener('click', () => {
+                        navLinks.classList.toggle('active');
+                    });
+                }
+            })
+            .catch(err => console.warn('Navigation failed to load:', err));
+    </script>
 </body>
 </html>
