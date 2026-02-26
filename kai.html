@@ -57,15 +57,12 @@
 
         .signature {
             font-family: 'Birthstone', cursive;
-            font-size: 3.2rem; /* Reduced for better proportion */
+            font-size: 3.2rem; 
             color: var(--kai-blue);
             margin-top: 20px;
             display: block;
             transform: rotate(-2deg);
         }
-
-        /* --- Navigation --- */
-       <div id="nav-placeholder"></div>
 
         /* --- Banner Header (Updated Colors) --- */
         .kai-banner { 
@@ -157,15 +154,7 @@
 </head>
 <body>
 
-    <nav>
-        <div class="nav-logo">KAI</div>
-        <div class="links">
-            <a href="index.html">HOME</a>
-            <a href="services.html">SERVICES</a>
-            <a href="media.html">MEDIA</a>
-            <a href="kai.html" style="color: var(--kayson-blue);">MEET KAI</a>
-        </div>
-    </nav>
+    <div id="nav-placeholder"></div>
 
     <div class="kai-banner">
         <h1 class="heavy-header" style="font-size: 5rem;">MEET<span>KAI</span></h1>
@@ -255,9 +244,7 @@
     </div>
 
     <footer>
-        
         <p>© 2026, Image and Company</p>
-        
     </footer>
 
     <script>
@@ -267,26 +254,24 @@
         window.onclick = function(event) { if (event.target == modal) { modal.style.display = "none"; } }
         document.getElementById("pledgeForm").onsubmit = function(e) { e.preventDefault(); alert("Thanks for taking the pledge!"); modal.style.display = "none"; }
     </script>
-<script>
-    // 1. Fetch the nav.html file
-    fetch('nav.html')
-        .then(response => response.text())
-        .then(data => {
-            // 2. Inject it into the placeholder
-            document.getElementById('nav-placeholder').innerHTML = data;
 
-            // 3. Initialize the Hamburger Logic AFTER it is injected
-            const hamburger = document.getElementById('hamburger');
-            const navLinks = document.getElementById('nav-links');
+    <script>
+        fetch('nav.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('nav-placeholder').innerHTML = data;
 
-            if (hamburger) {
-                hamburger.addEventListener('click', () => {
-                    navLinks.classList.toggle('active');
-                });
-            }
-        })
-        .catch(err => console.warn('Navigation failed to load:', err));
-</script>
+                const hamburger = document.getElementById('hamburger');
+                const navLinks = document.getElementById('nav-links');
+
+                if (hamburger) {
+                    hamburger.addEventListener('click', () => {
+                        navLinks.classList.toggle('active');
+                    });
+                }
+            })
+            .catch(err => console.warn('Navigation failed to load:', err));
+    </script>
     
 </body>
 </html>
