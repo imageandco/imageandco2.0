@@ -18,9 +18,6 @@
         body { background-color: var(--off-white); color: var(--legacy-ink); font-family: 'Inter', sans-serif; line-height: 1.6; }
         h1, h2, h3, h4 { font-family: 'Playfair Display', serif; }
 
-        /* --- Navigation --- */
-        <div id="nav-placeholder"></div>
-        
         /* --- Hero --- */
         .hero { padding: 120px 10%; text-align: center; border-bottom: var(--border); position: relative; }
         .hero h1 { font-size: 3.5rem; margin-bottom: 25px; }
@@ -87,15 +84,7 @@
 </head>
 <body>
 
-    <nav>
-        <div class="logo">Image & Co</div>
-        <div class="links">
-            <a href="index.html">HOME</a>
-            <a href="services.html">SERVICES</a>
-            <a href="media.html">MEDIA</a>
-            <a href="kai.html" class="kai-nav">MEET KAI</a>
-        </div>
-    </nav>
+    <div id="nav-placeholder"></div>
 
     <section class="hero">
         <h1>Not Your Average Agency</h1>
@@ -279,25 +268,24 @@
         }, { threshold: 0.5 });
         observer.observe(trigger);
     </script>
+
     <script>
-    // 1. Fetch the nav.html file
-    fetch('nav.html')
-        .then(response => response.text())
-        .then(data => {
-            // 2. Inject it into the placeholder
-            document.getElementById('nav-placeholder').innerHTML = data;
+        fetch('nav.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('nav-placeholder').innerHTML = data;
 
-            // 3. Initialize the Hamburger Logic AFTER it is injected
-            const hamburger = document.getElementById('hamburger');
-            const navLinks = document.getElementById('nav-links');
+                // Toggle logic for mobile menu
+                const hamburger = document.getElementById('hamburger');
+                const navLinks = document.getElementById('nav-links');
 
-            if (hamburger) {
-                hamburger.addEventListener('click', () => {
-                    navLinks.classList.toggle('active');
-                });
-            }
-        })
-        .catch(err => console.warn('Navigation failed to load:', err));
-</script>
+                if (hamburger) {
+                    hamburger.addEventListener('click', () => {
+                        navLinks.classList.toggle('active');
+                    });
+                }
+            })
+            .catch(err => console.warn('Navigation failed to load:', err));
+    </script>
 </body>
 </html>
